@@ -4,7 +4,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <embed src="music/mp3.mp3" hidden="true" autostart="true" loop="true"/>
     <style type="text/css">
         html {
             overflow: hidden;
@@ -30,7 +29,6 @@
     </style>
 
     <script type="text/javascript" src="js/ge1doot.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript">
 
         "use strict";
@@ -375,32 +373,9 @@
 
 </head>
 <body>
-   
-<!--<audio id="music1" controls="controls" autoplay="autoplay" preload id="music1" hidden>-->
-<!--    <source src="file/mp3.mp3" />-->
-<!--</audio>-->
-<!--这里是音乐-->
-<!--<img id="btn" class="active" src="imgs/1.jpg" alt="" />-->
-<!--<audio autoplay="autoplay" src="file/mp3.mp3"></audio>-->
-<!--<canvas id="canvas">你的浏览器不支持HTML5画布技术，请使用谷歌浏览器。</canvas>-->
+<canvas id="canvas">你的浏览器不支持HTML5画布技术，请使用谷歌浏览器。</canvas>
 
 <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 </div>
-<script type="text/javascript">
-    var audio = document.getElementById('music1');
-    $("#btn").bind("touchstart", function bf() {
-        if (audio !== null) {
-//检测播放是否已暂停.audio.paused 在播放器播放时返回false.
-//alert(audio.paused);
-            if (audio.paused) {
-                audio.play(); //audio.play();// 这个就是播放
-                $("#btn").addClass("active")
-            } else {
-                audio.pause(); // 这个就是暂停
-                $("#btn").removeClass("active");
-            }
-        }
-    })
-</script>
 </body>
 </html>

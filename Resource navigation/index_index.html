@@ -1,0 +1,2360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>荣登运维管理平台</title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport'/>
+
+    <link rel="icon" href="../assets/img/icon.ico" type="image/x-icon"/>
+
+    <!-- Fonts and icons -->
+    <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+        WebFont.load({
+            google: {"families": ["Open+Sans:300,400,600,700"]},
+            custom: {
+                "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"],
+                urls: ['../assets/css/fonts.css']
+            },
+            active: function () {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/azzara.min.css">
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="../assets/css/demo.css">
+    <!--banner-->
+    <link href="../css/theme.css" rel="stylesheet">
+    <link href="../css/bootstrap-reset.css" rel="stylesheet">
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <!--external css-->
+    <link href="../css/font-awesome.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/flexslider.css"/>
+    <link href="../css/jquery.bxslider.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/owl.carousel.css">
+    <link rel="stylesheet" href="../css/owl.theme.css">
+
+    <link href="../css/superfish.css" rel="stylesheet" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../css/component.css">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" type="text/css" href="../css/parallax-slider/parallax-slider.css"/>
+    <script type="text/javascript" src="../js/js/parallax-slider/modernizr.custom.28468.js">
+    </script>
+
+    <script src="../js/js/html5shiv.js">
+    </script>
+    <script src="../js/js/respond.min.js">
+    </script>
+    <!--导航-->
+    <link rel="stylesheet" href="../vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Google fonts - Roboto-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
+    <!-- Bootstrap Select-->
+    <link rel="stylesheet" href="../vendor/bootstrap-select/css/bootstrap-select.min.css">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.carousel.css">
+    <link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.theme.default.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="../assets/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="wrapper">
+    <!--
+        Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
+    -->
+    <div class="main-header main-header1">
+        <div class="main_header_max">
+            <div class="logo-header logo-header1">
+
+                <a href="index_index.html" class="logo">
+                    <img src="../assets/img/RD2.png" alt="navbar brand" class="navbar-brand" style="margin-top: 0px;">
+                    <span style="background-image: -webkit-gradient(linear, left 0, right 0, from(rgb(0, 53, 146)), to(rgb(33, 53, 146)));
+    -webkit-background-clip: text; /*必需加前缀 -webkit- 才支持这个text值 */
+    -webkit-text-fill-color: transparent; /*text-fill-color会覆盖color所定义的字体颜色： */">荣登运维管理平台</span>
+                </a>
+                <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
+                        data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="fa fa-bars"></i>
+					</span>
+                </button>
+                <button class="topbar-toggler more"><i class="fa fa-ellipsis-v"></i></button>
+
+            </div>
+            <nav class="navbar navbar-header navbar-expand-lg">
+
+                <div class="container-fluid container-fluid1">
+
+                    <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+
+                        <li class="nav-item dropdown hidden-caret">
+                            控制台
+                        </li>
+                        <li class="nav-item dropdown hidden-caret">
+                            <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-bell"></i>
+                                <span class="notification">4</span>
+                            </a>
+                            <ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
+                                <li>
+                                    <div class="dropdown-title">You have 4 new notification</div>
+                                </li>
+                                <li>
+                                    <div class="notif-scroll scrollbar-outer">
+                                        <div class="notif-center">
+                                            <a href="#">
+                                                <div class="notif-icon notif-primary"><i class="fa fa-user-plus"></i>
+                                                </div>
+                                                <div class="notif-content">
+													<span class="block">
+														New user registered
+													</span>
+                                                    <span class="time">5 minutes ago</span>
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="notif-icon notif-success"><i class="fa fa-comment"></i>
+                                                </div>
+                                                <div class="notif-content">
+													<span class="block">
+														Rahmad commented on Admin
+													</span>
+                                                    <span class="time">12 minutes ago</span>
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="notif-img">
+                                                    <img src="../assets/img/profile2.jpg" alt="Img Profile">
+                                                </div>
+                                                <div class="notif-content">
+													<span class="block">
+														Reza send messages to you
+													</span>
+                                                    <span class="time">12 minutes ago</span>
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="notif-icon notif-danger"><i class="fa fa-heart"></i></div>
+                                                <div class="notif-content">
+													<span class="block">
+														Farrah liked Admin
+													</span>
+                                                    <span class="time">17 minutes ago</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="see-all" href="javascript:void(0);">See all notifications<i
+                                            class="fa fa-angle-right"></i> </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown hidden-caret logi">
+                            <div class="log">登录</div>
+                        </li>
+                        <li class="nav-item dropdown hidden-caret rest">
+                            <div class="res">注册</div>
+                        </li>
+                        <li class="nav-item dropdown hidden-caret images">
+                            <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"
+                               aria-expanded="false">
+                                <div class="avatar-sm">
+                                    <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user animated fadeIn">
+                                <li>
+                                    <div class="user-box">
+                                        <div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile"
+                                                                    class="avatar-img rounded"></div>
+                                        <div class="u-text">
+                                            <h4>Hizrian</h4>
+                                            <p class="text-muted">hello@example.com</p><a href="profile.html"
+                                                                                          class="btn btn-rounded btn-danger btn-sm">View
+                                            Profile</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">My Profile</a>
+                                    <a class="dropdown-item" href="#">My Balance</a>
+                                    <a class="dropdown-item" href="#">Inbox</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Account Setting</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="nav-holder make-sticky">
+            <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
+                <div id="navigation" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item dropdown menu-large">
+                            <a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200"
+                               class="dropdown-toggle">关于荣登<b class="caret"></b></a>
+                            <ul class="dropdown-menu megamenu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Home</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="index.html" class="nav-link">Option
+                                                    1: Default Page</a></li>
+                                                <li class="nav-item"><a href="index2.html" class="nav-link">Option
+                                                    2: Application</a></li>
+                                                <li class="nav-item"><a href="index3.html" class="nav-link">Option
+                                                    3: Startup</a></li>
+                                                <li class="nav-item"><a href="index4.html" class="nav-link">Option
+                                                    4: Agency</a></li>
+                                                <li class="nav-item"><a href="index5.html" class="nav-link">Option
+                                                    5: Portfolio</a></li>
+                                            </ul>
+                                            <h5>About</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="about.html" class="nav-link">About
+                                                    us</a></li>
+                                                <li class="nav-item"><a href="team.html" class="nav-link">Our
+                                                    team</a></li>
+                                                <li class="nav-item"><a href="team-member.html"
+                                                                        class="nav-link">Team member</a></li>
+                                                <li class="nav-item"><a href="services.html"
+                                                                        class="nav-link">Services</a>
+                                                </li>
+                                            </ul>
+                                            <h5>Marketing</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="packages.html"
+                                                                        class="nav-link">Packages</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Portfolio</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="portfolio-2.html"
+                                                                        class="nav-link">2 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-2.html"
+                                                                        class="nav-link">2 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-3.html"
+                                                                        class="nav-link">3 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-3.html"
+                                                                        class="nav-link">3 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-4.html"
+                                                                        class="nav-link">4 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-4.html"
+                                                                        class="nav-link">4 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-detail.html"
+                                                                        class="nav-link">Portfolio - detail</a>
+                                                </li>
+                                                <li class="nav-item"><a href="portfolio-detail-2.html"
+                                                                        class="nav-link">Portfolio - detail
+                                                    2</a></li>
+                                            </ul>
+                                            <h5>User pages</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="customer-register.html"
+                                                                        class="nav-link">Register / login</a>
+                                                </li>
+                                                <li class="nav-item"><a href="customer-orders.html"
+                                                                        class="nav-link">Orders history</a></li>
+                                                <li class="nav-item"><a href="customer-order.html"
+                                                                        class="nav-link">Order history
+                                                    detail</a></li>
+                                                <li class="nav-item"><a href="customer-wishlist.html"
+                                                                        class="nav-link">Wishlist</a></li>
+                                                <li class="nav-item"><a href="customer-account.html"
+                                                                        class="nav-link">Customer account /
+                                                    change password</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Shop</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="shop-category.html"
+                                                                        class="nav-link">Category - sidebar
+                                                    right</a></li>
+                                                <li class="nav-item"><a href="shop-category-left.html"
+                                                                        class="nav-link">Category - sidebar
+                                                    left</a></li>
+                                                <li class="nav-item"><a href="shop-category-full.html"
+                                                                        class="nav-link">Category - full
+                                                    width</a></li>
+                                                <li class="nav-item"><a href="shop-detail.html"
+                                                                        class="nav-link">Product detail</a></li>
+                                            </ul>
+                                            <h5>Shop - order process</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="shop-basket.html"
+                                                                        class="nav-link">Shopping cart</a></li>
+                                                <li class="nav-item"><a href="shop-checkout1.html"
+                                                                        class="nav-link">Checkout - step 1</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout2.html"
+                                                                        class="nav-link">Checkout - step 2</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout3.html"
+                                                                        class="nav-link">Checkout - step 3</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout4.html"
+                                                                        class="nav-link">Checkout - step 4</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Contact</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a>
+                                                </li>
+                                                <li class="nav-item"><a href="contact2.html" class="nav-link">Contact
+                                                    - version 2</a></li>
+                                                <li class="nav-item"><a href="contact3.html" class="nav-link">Contact
+                                                    - version 3</a></li>
+                                            </ul>
+                                            <h5>Pages</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="text.html" class="nav-link">Text
+                                                    page</a></li>
+                                                <li class="nav-item"><a href="text-left.html" class="nav-link">Text
+                                                    page - left sidebar</a></li>
+                                                <li class="nav-item"><a href="text-full.html" class="nav-link">Text
+                                                    page - full width</a></li>
+                                                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a>
+                                                </li>
+                                                <li class="nav-item"><a href="404.html" class="nav-link">404
+                                                    page</a></li>
+                                            </ul>
+                                            <h5>Blog</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="blog.html" class="nav-link">Blog
+                                                    listing big</a></li>
+                                                <li class="nav-item"><a href="blog-medium.html"
+                                                                        class="nav-link">Blog listing medium</a>
+                                                </li>
+                                                <li class="nav-item"><a href="blog-small.html" class="nav-link">Blog
+                                                    listing small</a></li>
+                                                <li class="nav-item"><a href="blog-post.html" class="nav-link">Blog
+                                                    Post</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown"
+                                                                    data-hover="dropdown" data-delay="200"
+                                                                    class="dropdown-toggle">最新活动<b
+                                class="caret"></b></a>
+                            <ul class="dropdown-menu megamenu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Home</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="index.html" class="nav-link">Option
+                                                    1: Default Page</a></li>
+                                                <li class="nav-item"><a href="index2.html" class="nav-link">Option
+                                                    2: Application</a></li>
+                                                <li class="nav-item"><a href="index3.html" class="nav-link">Option
+                                                    3: Startup</a></li>
+                                                <li class="nav-item"><a href="index4.html" class="nav-link">Option
+                                                    4: Agency</a></li>
+                                                <li class="nav-item"><a href="index5.html" class="nav-link">Option
+                                                    5: Portfolio</a></li>
+                                            </ul>
+                                            <h5>About</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="about.html" class="nav-link">About
+                                                    us</a></li>
+                                                <li class="nav-item"><a href="team.html" class="nav-link">Our
+                                                    team</a></li>
+                                                <li class="nav-item"><a href="team-member.html"
+                                                                        class="nav-link">Team member</a></li>
+                                                <li class="nav-item"><a href="services.html"
+                                                                        class="nav-link">Services</a>
+                                                </li>
+                                            </ul>
+                                            <h5>Marketing</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="packages.html"
+                                                                        class="nav-link">Packages</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Portfolio</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="portfolio-2.html"
+                                                                        class="nav-link">2 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-2.html"
+                                                                        class="nav-link">2 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-3.html"
+                                                                        class="nav-link">3 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-3.html"
+                                                                        class="nav-link">3 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-4.html"
+                                                                        class="nav-link">4 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-4.html"
+                                                                        class="nav-link">4 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-detail.html"
+                                                                        class="nav-link">Portfolio - detail</a>
+                                                </li>
+                                                <li class="nav-item"><a href="portfolio-detail-2.html"
+                                                                        class="nav-link">Portfolio - detail
+                                                    2</a></li>
+                                            </ul>
+                                            <h5>User pages</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="customer-register.html"
+                                                                        class="nav-link">Register / login</a>
+                                                </li>
+                                                <li class="nav-item"><a href="customer-orders.html"
+                                                                        class="nav-link">Orders history</a></li>
+                                                <li class="nav-item"><a href="customer-order.html"
+                                                                        class="nav-link">Order history
+                                                    detail</a></li>
+                                                <li class="nav-item"><a href="customer-wishlist.html"
+                                                                        class="nav-link">Wishlist</a></li>
+                                                <li class="nav-item"><a href="customer-account.html"
+                                                                        class="nav-link">Customer account /
+                                                    change password</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Shop</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="shop-category.html"
+                                                                        class="nav-link">Category - sidebar
+                                                    right</a></li>
+                                                <li class="nav-item"><a href="shop-category-left.html"
+                                                                        class="nav-link">Category - sidebar
+                                                    left</a></li>
+                                                <li class="nav-item"><a href="shop-category-full.html"
+                                                                        class="nav-link">Category - full
+                                                    width</a></li>
+                                                <li class="nav-item"><a href="shop-detail.html"
+                                                                        class="nav-link">Product detail</a></li>
+                                            </ul>
+                                            <h5>Shop - order process</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="shop-basket.html"
+                                                                        class="nav-link">Shopping cart</a></li>
+                                                <li class="nav-item"><a href="shop-checkout1.html"
+                                                                        class="nav-link">Checkout - step 1</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout2.html"
+                                                                        class="nav-link">Checkout - step 2</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout3.html"
+                                                                        class="nav-link">Checkout - step 3</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout4.html"
+                                                                        class="nav-link">Checkout - step 4</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Contact</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a>
+                                                </li>
+                                                <li class="nav-item"><a href="contact2.html" class="nav-link">Contact
+                                                    - version 2</a></li>
+                                                <li class="nav-item"><a href="contact3.html" class="nav-link">Contact
+                                                    - version 3</a></li>
+                                            </ul>
+                                            <h5>Pages</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="text.html" class="nav-link">Text
+                                                    page</a></li>
+                                                <li class="nav-item"><a href="text-left.html" class="nav-link">Text
+                                                    page - left sidebar</a></li>
+                                                <li class="nav-item"><a href="text-full.html" class="nav-link">Text
+                                                    page - full width</a></li>
+                                                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a>
+                                                </li>
+                                                <li class="nav-item"><a href="404.html" class="nav-link">404
+                                                    page</a></li>
+                                            </ul>
+                                            <h5>Blog</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="blog.html" class="nav-link">Blog
+                                                    listing big</a></li>
+                                                <li class="nav-item"><a href="blog-medium.html"
+                                                                        class="nav-link">Blog listing medium</a>
+                                                </li>
+                                                <li class="nav-item"><a href="blog-small.html" class="nav-link">Blog
+                                                    listing small</a></li>
+                                                <li class="nav-item"><a href="blog-post.html" class="nav-link">Blog
+                                                    Post</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown"
+                                                                    data-hover="dropdown" data-delay="200"
+                                                                    class="dropdown-toggle">产品<b
+                                class="caret"></b></a>
+                            <ul class="dropdown-menu megamenu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Home</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="index.html" class="nav-link">Option
+                                                    1: Default Page</a></li>
+                                                <li class="nav-item"><a href="index2.html" class="nav-link">Option
+                                                    2: Application</a></li>
+                                                <li class="nav-item"><a href="index3.html" class="nav-link">Option
+                                                    3: Startup</a></li>
+                                                <li class="nav-item"><a href="index4.html" class="nav-link">Option
+                                                    4: Agency</a></li>
+                                                <li class="nav-item"><a href="index5.html" class="nav-link">Option
+                                                    5: Portfolio</a></li>
+                                            </ul>
+                                            <h5>About</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="about.html" class="nav-link">About
+                                                    us</a></li>
+                                                <li class="nav-item"><a href="team.html" class="nav-link">Our
+                                                    team</a></li>
+                                                <li class="nav-item"><a href="team-member.html"
+                                                                        class="nav-link">Team member</a></li>
+                                                <li class="nav-item"><a href="services.html"
+                                                                        class="nav-link">Services</a>
+                                                </li>
+                                            </ul>
+                                            <h5>Marketing</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="packages.html"
+                                                                        class="nav-link">Packages</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Portfolio</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="portfolio-2.html"
+                                                                        class="nav-link">2 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-2.html"
+                                                                        class="nav-link">2 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-3.html"
+                                                                        class="nav-link">3 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-3.html"
+                                                                        class="nav-link">3 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-4.html"
+                                                                        class="nav-link">4 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-4.html"
+                                                                        class="nav-link">4 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-detail.html"
+                                                                        class="nav-link">Portfolio - detail</a>
+                                                </li>
+                                                <li class="nav-item"><a href="portfolio-detail-2.html"
+                                                                        class="nav-link">Portfolio - detail
+                                                    2</a></li>
+                                            </ul>
+                                            <h5>User pages</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="customer-register.html"
+                                                                        class="nav-link">Register / login</a>
+                                                </li>
+                                                <li class="nav-item"><a href="customer-orders.html"
+                                                                        class="nav-link">Orders history</a></li>
+                                                <li class="nav-item"><a href="customer-order.html"
+                                                                        class="nav-link">Order history
+                                                    detail</a></li>
+                                                <li class="nav-item"><a href="customer-wishlist.html"
+                                                                        class="nav-link">Wishlist</a></li>
+                                                <li class="nav-item"><a href="customer-account.html"
+                                                                        class="nav-link">Customer account /
+                                                    change password</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Shop</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="shop-category.html"
+                                                                        class="nav-link">Category - sidebar
+                                                    right</a></li>
+                                                <li class="nav-item"><a href="shop-category-left.html"
+                                                                        class="nav-link">Category - sidebar
+                                                    left</a></li>
+                                                <li class="nav-item"><a href="shop-category-full.html"
+                                                                        class="nav-link">Category - full
+                                                    width</a></li>
+                                                <li class="nav-item"><a href="shop-detail.html"
+                                                                        class="nav-link">Product detail</a></li>
+                                            </ul>
+                                            <h5>Shop - order process</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="shop-basket.html"
+                                                                        class="nav-link">Shopping cart</a></li>
+                                                <li class="nav-item"><a href="shop-checkout1.html"
+                                                                        class="nav-link">Checkout - step 1</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout2.html"
+                                                                        class="nav-link">Checkout - step 2</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout3.html"
+                                                                        class="nav-link">Checkout - step 3</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout4.html"
+                                                                        class="nav-link">Checkout - step 4</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Contact</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a>
+                                                </li>
+                                                <li class="nav-item"><a href="contact2.html" class="nav-link">Contact
+                                                    - version 2</a></li>
+                                                <li class="nav-item"><a href="contact3.html" class="nav-link">Contact
+                                                    - version 3</a></li>
+                                            </ul>
+                                            <h5>Pages</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="text.html" class="nav-link">Text
+                                                    page</a></li>
+                                                <li class="nav-item"><a href="text-left.html" class="nav-link">Text
+                                                    page - left sidebar</a></li>
+                                                <li class="nav-item"><a href="text-full.html" class="nav-link">Text
+                                                    page - full width</a></li>
+                                                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a>
+                                                </li>
+                                                <li class="nav-item"><a href="404.html" class="nav-link">404
+                                                    page</a></li>
+                                            </ul>
+                                            <h5>Blog</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="blog.html" class="nav-link">Blog
+                                                    listing big</a></li>
+                                                <li class="nav-item"><a href="blog-medium.html"
+                                                                        class="nav-link">Blog listing medium</a>
+                                                </li>
+                                                <li class="nav-item"><a href="blog-small.html" class="nav-link">Blog
+                                                    listing small</a></li>
+                                                <li class="nav-item"><a href="blog-post.html" class="nav-link">Blog
+                                                    Post</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown"
+                                                                    data-hover="dropdown" data-delay="200"
+                                                                    class="dropdown-toggle">解决方案<b
+                                class="caret"></b></a>
+                            <ul class="dropdown-menu megamenu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Home</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="index.html" class="nav-link">Option
+                                                    1: Default Page</a></li>
+                                                <li class="nav-item"><a href="index2.html" class="nav-link">Option
+                                                    2: Application</a></li>
+                                                <li class="nav-item"><a href="index3.html" class="nav-link">Option
+                                                    3: Startup</a></li>
+                                                <li class="nav-item"><a href="index4.html" class="nav-link">Option
+                                                    4: Agency</a></li>
+                                                <li class="nav-item"><a href="index5.html" class="nav-link">Option
+                                                    5: Portfolio</a></li>
+                                            </ul>
+                                            <h5>About</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="about.html" class="nav-link">About
+                                                    us</a></li>
+                                                <li class="nav-item"><a href="team.html" class="nav-link">Our
+                                                    team</a></li>
+                                                <li class="nav-item"><a href="team-member.html"
+                                                                        class="nav-link">Team member</a></li>
+                                                <li class="nav-item"><a href="services.html"
+                                                                        class="nav-link">Services</a>
+                                                </li>
+                                            </ul>
+                                            <h5>Marketing</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="packages.html"
+                                                                        class="nav-link">Packages</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Portfolio</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="portfolio-2.html"
+                                                                        class="nav-link">2 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-2.html"
+                                                                        class="nav-link">2 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-3.html"
+                                                                        class="nav-link">3 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-3.html"
+                                                                        class="nav-link">3 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-4.html"
+                                                                        class="nav-link">4 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-4.html"
+                                                                        class="nav-link">4 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-detail.html"
+                                                                        class="nav-link">Portfolio - detail</a>
+                                                </li>
+                                                <li class="nav-item"><a href="portfolio-detail-2.html"
+                                                                        class="nav-link">Portfolio - detail
+                                                    2</a></li>
+                                            </ul>
+                                            <h5>User pages</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="customer-register.html"
+                                                                        class="nav-link">Register / login</a>
+                                                </li>
+                                                <li class="nav-item"><a href="customer-orders.html"
+                                                                        class="nav-link">Orders history</a></li>
+                                                <li class="nav-item"><a href="customer-order.html"
+                                                                        class="nav-link">Order history
+                                                    detail</a></li>
+                                                <li class="nav-item"><a href="customer-wishlist.html"
+                                                                        class="nav-link">Wishlist</a></li>
+                                                <li class="nav-item"><a href="customer-account.html"
+                                                                        class="nav-link">Customer account /
+                                                    change password</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Shop</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="shop-category.html"
+                                                                        class="nav-link">Category - sidebar
+                                                    right</a></li>
+                                                <li class="nav-item"><a href="shop-category-left.html"
+                                                                        class="nav-link">Category - sidebar
+                                                    left</a></li>
+                                                <li class="nav-item"><a href="shop-category-full.html"
+                                                                        class="nav-link">Category - full
+                                                    width</a></li>
+                                                <li class="nav-item"><a href="shop-detail.html"
+                                                                        class="nav-link">Product detail</a></li>
+                                            </ul>
+                                            <h5>Shop - order process</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="shop-basket.html"
+                                                                        class="nav-link">Shopping cart</a></li>
+                                                <li class="nav-item"><a href="shop-checkout1.html"
+                                                                        class="nav-link">Checkout - step 1</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout2.html"
+                                                                        class="nav-link">Checkout - step 2</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout3.html"
+                                                                        class="nav-link">Checkout - step 3</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout4.html"
+                                                                        class="nav-link">Checkout - step 4</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Contact</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a>
+                                                </li>
+                                                <li class="nav-item"><a href="contact2.html" class="nav-link">Contact
+                                                    - version 2</a></li>
+                                                <li class="nav-item"><a href="contact3.html" class="nav-link">Contact
+                                                    - version 3</a></li>
+                                            </ul>
+                                            <h5>Pages</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="text.html" class="nav-link">Text
+                                                    page</a></li>
+                                                <li class="nav-item"><a href="text-left.html" class="nav-link">Text
+                                                    page - left sidebar</a></li>
+                                                <li class="nav-item"><a href="text-full.html" class="nav-link">Text
+                                                    page - full width</a></li>
+                                                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a>
+                                                </li>
+                                                <li class="nav-item"><a href="404.html" class="nav-link">404
+                                                    page</a></li>
+                                            </ul>
+                                            <h5>Blog</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="blog.html" class="nav-link">Blog
+                                                    listing big</a></li>
+                                                <li class="nav-item"><a href="blog-medium.html"
+                                                                        class="nav-link">Blog listing medium</a>
+                                                </li>
+                                                <li class="nav-item"><a href="blog-small.html" class="nav-link">Blog
+                                                    listing small</a></li>
+                                                <li class="nav-item"><a href="blog-post.html" class="nav-link">Blog
+                                                    Post</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown"
+                                                                    data-hover="dropdown" data-delay="200"
+                                                                    class="dropdown-toggle">企业智能<b
+                                class="caret"></b></a>
+                            <ul class="dropdown-menu megamenu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Home</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="index.html" class="nav-link">Option
+                                                    1: Default Page</a></li>
+                                                <li class="nav-item"><a href="index2.html" class="nav-link">Option
+                                                    2: Application</a></li>
+                                                <li class="nav-item"><a href="index3.html" class="nav-link">Option
+                                                    3: Startup</a></li>
+                                                <li class="nav-item"><a href="index4.html" class="nav-link">Option
+                                                    4: Agency</a></li>
+                                                <li class="nav-item"><a href="index5.html" class="nav-link">Option
+                                                    5: Portfolio</a></li>
+                                            </ul>
+                                            <h5>About</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="about.html" class="nav-link">About
+                                                    us</a></li>
+                                                <li class="nav-item"><a href="team.html" class="nav-link">Our
+                                                    team</a></li>
+                                                <li class="nav-item"><a href="team-member.html"
+                                                                        class="nav-link">Team member</a></li>
+                                                <li class="nav-item"><a href="services.html"
+                                                                        class="nav-link">Services</a>
+                                                </li>
+                                            </ul>
+                                            <h5>Marketing</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="packages.html"
+                                                                        class="nav-link">Packages</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Portfolio</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="portfolio-2.html"
+                                                                        class="nav-link">2 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-2.html"
+                                                                        class="nav-link">2 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-3.html"
+                                                                        class="nav-link">3 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-3.html"
+                                                                        class="nav-link">3 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-4.html"
+                                                                        class="nav-link">4 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-4.html"
+                                                                        class="nav-link">4 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-detail.html"
+                                                                        class="nav-link">Portfolio - detail</a>
+                                                </li>
+                                                <li class="nav-item"><a href="portfolio-detail-2.html"
+                                                                        class="nav-link">Portfolio - detail
+                                                    2</a></li>
+                                            </ul>
+                                            <h5>User pages</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="customer-register.html"
+                                                                        class="nav-link">Register / login</a>
+                                                </li>
+                                                <li class="nav-item"><a href="customer-orders.html"
+                                                                        class="nav-link">Orders history</a></li>
+                                                <li class="nav-item"><a href="customer-order.html"
+                                                                        class="nav-link">Order history
+                                                    detail</a></li>
+                                                <li class="nav-item"><a href="customer-wishlist.html"
+                                                                        class="nav-link">Wishlist</a></li>
+                                                <li class="nav-item"><a href="customer-account.html"
+                                                                        class="nav-link">Customer account /
+                                                    change password</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Shop</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="shop-category.html"
+                                                                        class="nav-link">Category - sidebar
+                                                    right</a></li>
+                                                <li class="nav-item"><a href="shop-category-left.html"
+                                                                        class="nav-link">Category - sidebar
+                                                    left</a></li>
+                                                <li class="nav-item"><a href="shop-category-full.html"
+                                                                        class="nav-link">Category - full
+                                                    width</a></li>
+                                                <li class="nav-item"><a href="shop-detail.html"
+                                                                        class="nav-link">Product detail</a></li>
+                                            </ul>
+                                            <h5>Shop - order process</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="shop-basket.html"
+                                                                        class="nav-link">Shopping cart</a></li>
+                                                <li class="nav-item"><a href="shop-checkout1.html"
+                                                                        class="nav-link">Checkout - step 1</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout2.html"
+                                                                        class="nav-link">Checkout - step 2</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout3.html"
+                                                                        class="nav-link">Checkout - step 3</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout4.html"
+                                                                        class="nav-link">Checkout - step 4</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Contact</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a>
+                                                </li>
+                                                <li class="nav-item"><a href="contact2.html" class="nav-link">Contact
+                                                    - version 2</a></li>
+                                                <li class="nav-item"><a href="contact3.html" class="nav-link">Contact
+                                                    - version 3</a></li>
+                                            </ul>
+                                            <h5>Pages</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="text.html" class="nav-link">Text
+                                                    page</a></li>
+                                                <li class="nav-item"><a href="text-left.html" class="nav-link">Text
+                                                    page - left sidebar</a></li>
+                                                <li class="nav-item"><a href="text-full.html" class="nav-link">Text
+                                                    page - full width</a></li>
+                                                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a>
+                                                </li>
+                                                <li class="nav-item"><a href="404.html" class="nav-link">404
+                                                    page</a></li>
+                                            </ul>
+                                            <h5>Blog</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="blog.html" class="nav-link">Blog
+                                                    listing big</a></li>
+                                                <li class="nav-item"><a href="blog-medium.html"
+                                                                        class="nav-link">Blog listing medium</a>
+                                                </li>
+                                                <li class="nav-item"><a href="blog-small.html" class="nav-link">Blog
+                                                    listing small</a></li>
+                                                <li class="nav-item"><a href="blog-post.html" class="nav-link">Blog
+                                                    Post</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown"
+                                                                    data-hover="dropdown" data-delay="200"
+                                                                    class="dropdown-toggle">云市场<b
+                                class="caret"></b></a>
+                            <ul class="dropdown-menu megamenu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Home</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="index.html" class="nav-link">Option
+                                                    1: Default Page</a></li>
+                                                <li class="nav-item"><a href="index2.html" class="nav-link">Option
+                                                    2: Application</a></li>
+                                                <li class="nav-item"><a href="index3.html" class="nav-link">Option
+                                                    3: Startup</a></li>
+                                                <li class="nav-item"><a href="index4.html" class="nav-link">Option
+                                                    4: Agency</a></li>
+                                                <li class="nav-item"><a href="index5.html" class="nav-link">Option
+                                                    5: Portfolio</a></li>
+                                            </ul>
+                                            <h5>About</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="about.html" class="nav-link">About
+                                                    us</a></li>
+                                                <li class="nav-item"><a href="team.html" class="nav-link">Our
+                                                    team</a></li>
+                                                <li class="nav-item"><a href="team-member.html"
+                                                                        class="nav-link">Team member</a></li>
+                                                <li class="nav-item"><a href="services.html"
+                                                                        class="nav-link">Services</a>
+                                                </li>
+                                            </ul>
+                                            <h5>Marketing</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="packages.html"
+                                                                        class="nav-link">Packages</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Portfolio</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="portfolio-2.html"
+                                                                        class="nav-link">2 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-2.html"
+                                                                        class="nav-link">2 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-3.html"
+                                                                        class="nav-link">3 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-3.html"
+                                                                        class="nav-link">3 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-4.html"
+                                                                        class="nav-link">4 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-4.html"
+                                                                        class="nav-link">4 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-detail.html"
+                                                                        class="nav-link">Portfolio - detail</a>
+                                                </li>
+                                                <li class="nav-item"><a href="portfolio-detail-2.html"
+                                                                        class="nav-link">Portfolio - detail
+                                                    2</a></li>
+                                            </ul>
+                                            <h5>User pages</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="customer-register.html"
+                                                                        class="nav-link">Register / login</a>
+                                                </li>
+                                                <li class="nav-item"><a href="customer-orders.html"
+                                                                        class="nav-link">Orders history</a></li>
+                                                <li class="nav-item"><a href="customer-order.html"
+                                                                        class="nav-link">Order history
+                                                    detail</a></li>
+                                                <li class="nav-item"><a href="customer-wishlist.html"
+                                                                        class="nav-link">Wishlist</a></li>
+                                                <li class="nav-item"><a href="customer-account.html"
+                                                                        class="nav-link">Customer account /
+                                                    change password</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Shop</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="shop-category.html"
+                                                                        class="nav-link">Category - sidebar
+                                                    right</a></li>
+                                                <li class="nav-item"><a href="shop-category-left.html"
+                                                                        class="nav-link">Category - sidebar
+                                                    left</a></li>
+                                                <li class="nav-item"><a href="shop-category-full.html"
+                                                                        class="nav-link">Category - full
+                                                    width</a></li>
+                                                <li class="nav-item"><a href="shop-detail.html"
+                                                                        class="nav-link">Product detail</a></li>
+                                            </ul>
+                                            <h5>Shop - order process</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="shop-basket.html"
+                                                                        class="nav-link">Shopping cart</a></li>
+                                                <li class="nav-item"><a href="shop-checkout1.html"
+                                                                        class="nav-link">Checkout - step 1</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout2.html"
+                                                                        class="nav-link">Checkout - step 2</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout3.html"
+                                                                        class="nav-link">Checkout - step 3</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout4.html"
+                                                                        class="nav-link">Checkout - step 4</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Contact</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a>
+                                                </li>
+                                                <li class="nav-item"><a href="contact2.html" class="nav-link">Contact
+                                                    - version 2</a></li>
+                                                <li class="nav-item"><a href="contact3.html" class="nav-link">Contact
+                                                    - version 3</a></li>
+                                            </ul>
+                                            <h5>Pages</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="text.html" class="nav-link">Text
+                                                    page</a></li>
+                                                <li class="nav-item"><a href="text-left.html" class="nav-link">Text
+                                                    page - left sidebar</a></li>
+                                                <li class="nav-item"><a href="text-full.html" class="nav-link">Text
+                                                    page - full width</a></li>
+                                                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a>
+                                                </li>
+                                                <li class="nav-item"><a href="404.html" class="nav-link">404
+                                                    page</a></li>
+                                            </ul>
+                                            <h5>Blog</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="blog.html" class="nav-link">Blog
+                                                    listing big</a></li>
+                                                <li class="nav-item"><a href="blog-medium.html"
+                                                                        class="nav-link">Blog listing medium</a>
+                                                </li>
+                                                <li class="nav-item"><a href="blog-small.html" class="nav-link">Blog
+                                                    listing small</a></li>
+                                                <li class="nav-item"><a href="blog-post.html" class="nav-link">Blog
+                                                    Post</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown"
+                                                                    data-hover="dropdown" data-delay="200"
+                                                                    class="dropdown-toggle">合作伙伴<b
+                                class="caret"></b></a>
+                            <ul class="dropdown-menu megamenu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Home</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="index.html" class="nav-link">Option
+                                                    1: Default Page</a></li>
+                                                <li class="nav-item"><a href="index2.html" class="nav-link">Option
+                                                    2: Application</a></li>
+                                                <li class="nav-item"><a href="index3.html" class="nav-link">Option
+                                                    3: Startup</a></li>
+                                                <li class="nav-item"><a href="index4.html" class="nav-link">Option
+                                                    4: Agency</a></li>
+                                                <li class="nav-item"><a href="index5.html" class="nav-link">Option
+                                                    5: Portfolio</a></li>
+                                            </ul>
+                                            <h5>About</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="about.html" class="nav-link">About
+                                                    us</a></li>
+                                                <li class="nav-item"><a href="team.html" class="nav-link">Our
+                                                    team</a></li>
+                                                <li class="nav-item"><a href="team-member.html"
+                                                                        class="nav-link">Team member</a></li>
+                                                <li class="nav-item"><a href="services.html"
+                                                                        class="nav-link">Services</a>
+                                                </li>
+                                            </ul>
+                                            <h5>Marketing</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="packages.html"
+                                                                        class="nav-link">Packages</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Portfolio</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="portfolio-2.html"
+                                                                        class="nav-link">2 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-2.html"
+                                                                        class="nav-link">2 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-3.html"
+                                                                        class="nav-link">3 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-3.html"
+                                                                        class="nav-link">3 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-4.html"
+                                                                        class="nav-link">4 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-4.html"
+                                                                        class="nav-link">4 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-detail.html"
+                                                                        class="nav-link">Portfolio - detail</a>
+                                                </li>
+                                                <li class="nav-item"><a href="portfolio-detail-2.html"
+                                                                        class="nav-link">Portfolio - detail
+                                                    2</a></li>
+                                            </ul>
+                                            <h5>User pages</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="customer-register.html"
+                                                                        class="nav-link">Register / login</a>
+                                                </li>
+                                                <li class="nav-item"><a href="customer-orders.html"
+                                                                        class="nav-link">Orders history</a></li>
+                                                <li class="nav-item"><a href="customer-order.html"
+                                                                        class="nav-link">Order history
+                                                    detail</a></li>
+                                                <li class="nav-item"><a href="customer-wishlist.html"
+                                                                        class="nav-link">Wishlist</a></li>
+                                                <li class="nav-item"><a href="customer-account.html"
+                                                                        class="nav-link">Customer account /
+                                                    change password</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Shop</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="shop-category.html"
+                                                                        class="nav-link">Category - sidebar
+                                                    right</a></li>
+                                                <li class="nav-item"><a href="shop-category-left.html"
+                                                                        class="nav-link">Category - sidebar
+                                                    left</a></li>
+                                                <li class="nav-item"><a href="shop-category-full.html"
+                                                                        class="nav-link">Category - full
+                                                    width</a></li>
+                                                <li class="nav-item"><a href="shop-detail.html"
+                                                                        class="nav-link">Product detail</a></li>
+                                            </ul>
+                                            <h5>Shop - order process</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="shop-basket.html"
+                                                                        class="nav-link">Shopping cart</a></li>
+                                                <li class="nav-item"><a href="shop-checkout1.html"
+                                                                        class="nav-link">Checkout - step 1</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout2.html"
+                                                                        class="nav-link">Checkout - step 2</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout3.html"
+                                                                        class="nav-link">Checkout - step 3</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout4.html"
+                                                                        class="nav-link">Checkout - step 4</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Contact</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a>
+                                                </li>
+                                                <li class="nav-item"><a href="contact2.html" class="nav-link">Contact
+                                                    - version 2</a></li>
+                                                <li class="nav-item"><a href="contact3.html" class="nav-link">Contact
+                                                    - version 3</a></li>
+                                            </ul>
+                                            <h5>Pages</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="text.html" class="nav-link">Text
+                                                    page</a></li>
+                                                <li class="nav-item"><a href="text-left.html" class="nav-link">Text
+                                                    page - left sidebar</a></li>
+                                                <li class="nav-item"><a href="text-full.html" class="nav-link">Text
+                                                    page - full width</a></li>
+                                                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a>
+                                                </li>
+                                                <li class="nav-item"><a href="404.html" class="nav-link">404
+                                                    page</a></li>
+                                            </ul>
+                                            <h5>Blog</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="blog.html" class="nav-link">Blog
+                                                    listing big</a></li>
+                                                <li class="nav-item"><a href="blog-medium.html"
+                                                                        class="nav-link">Blog listing medium</a>
+                                                </li>
+                                                <li class="nav-item"><a href="blog-small.html" class="nav-link">Blog
+                                                    listing small</a></li>
+                                                <li class="nav-item"><a href="blog-post.html" class="nav-link">Blog
+                                                    Post</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown"
+                                                                    data-hover="dropdown" data-delay="200"
+                                                                    class="dropdown-toggle">支持与服务<b
+                                class="caret"></b></a>
+                            <ul class="dropdown-menu megamenu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Home</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="index.html" class="nav-link">Option
+                                                    1: Default Page</a></li>
+                                                <li class="nav-item"><a href="index2.html" class="nav-link">Option
+                                                    2: Application</a></li>
+                                                <li class="nav-item"><a href="index3.html" class="nav-link">Option
+                                                    3: Startup</a></li>
+                                                <li class="nav-item"><a href="index4.html" class="nav-link">Option
+                                                    4: Agency</a></li>
+                                                <li class="nav-item"><a href="index5.html" class="nav-link">Option
+                                                    5: Portfolio</a></li>
+                                            </ul>
+                                            <h5>About</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="about.html" class="nav-link">About
+                                                    us</a></li>
+                                                <li class="nav-item"><a href="team.html" class="nav-link">Our
+                                                    team</a></li>
+                                                <li class="nav-item"><a href="team-member.html"
+                                                                        class="nav-link">Team member</a></li>
+                                                <li class="nav-item"><a href="services.html"
+                                                                        class="nav-link">Services</a>
+                                                </li>
+                                            </ul>
+                                            <h5>Marketing</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="packages.html"
+                                                                        class="nav-link">Packages</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Portfolio</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="portfolio-2.html"
+                                                                        class="nav-link">2 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-2.html"
+                                                                        class="nav-link">2 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-3.html"
+                                                                        class="nav-link">3 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-3.html"
+                                                                        class="nav-link">3 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-4.html"
+                                                                        class="nav-link">4 columns</a></li>
+                                                <li class="nav-item"><a href="portfolio-no-space-4.html"
+                                                                        class="nav-link">4 columns with negative
+                                                    space</a></li>
+                                                <li class="nav-item"><a href="portfolio-detail.html"
+                                                                        class="nav-link">Portfolio - detail</a>
+                                                </li>
+                                                <li class="nav-item"><a href="portfolio-detail-2.html"
+                                                                        class="nav-link">Portfolio - detail
+                                                    2</a></li>
+                                            </ul>
+                                            <h5>User pages</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="customer-register.html"
+                                                                        class="nav-link">Register / login</a>
+                                                </li>
+                                                <li class="nav-item"><a href="customer-orders.html"
+                                                                        class="nav-link">Orders history</a></li>
+                                                <li class="nav-item"><a href="customer-order.html"
+                                                                        class="nav-link">Order history
+                                                    detail</a></li>
+                                                <li class="nav-item"><a href="customer-wishlist.html"
+                                                                        class="nav-link">Wishlist</a></li>
+                                                <li class="nav-item"><a href="customer-account.html"
+                                                                        class="nav-link">Customer account /
+                                                    change password</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Shop</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="shop-category.html"
+                                                                        class="nav-link">Category - sidebar
+                                                    right</a></li>
+                                                <li class="nav-item"><a href="shop-category-left.html"
+                                                                        class="nav-link">Category - sidebar
+                                                    left</a></li>
+                                                <li class="nav-item"><a href="shop-category-full.html"
+                                                                        class="nav-link">Category - full
+                                                    width</a></li>
+                                                <li class="nav-item"><a href="shop-detail.html"
+                                                                        class="nav-link">Product detail</a></li>
+                                            </ul>
+                                            <h5>Shop - order process</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="shop-basket.html"
+                                                                        class="nav-link">Shopping cart</a></li>
+                                                <li class="nav-item"><a href="shop-checkout1.html"
+                                                                        class="nav-link">Checkout - step 1</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout2.html"
+                                                                        class="nav-link">Checkout - step 2</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout3.html"
+                                                                        class="nav-link">Checkout - step 3</a>
+                                                </li>
+                                                <li class="nav-item"><a href="shop-checkout4.html"
+                                                                        class="nav-link">Checkout - step 4</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <h5>Contact</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a>
+                                                </li>
+                                                <li class="nav-item"><a href="contact2.html" class="nav-link">Contact
+                                                    - version 2</a></li>
+                                                <li class="nav-item"><a href="contact3.html" class="nav-link">Contact
+                                                    - version 3</a></li>
+                                            </ul>
+                                            <h5>Pages</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="text.html" class="nav-link">Text
+                                                    page</a></li>
+                                                <li class="nav-item"><a href="text-left.html" class="nav-link">Text
+                                                    page - left sidebar</a></li>
+                                                <li class="nav-item"><a href="text-full.html" class="nav-link">Text
+                                                    page - full width</a></li>
+                                                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a>
+                                                </li>
+                                                <li class="nav-item"><a href="404.html" class="nav-link">404
+                                                    page</a></li>
+                                            </ul>
+                                            <h5>Blog</h5>
+                                            <ul class="list-unstyled mb-3">
+                                                <li class="nav-item"><a href="blog.html" class="nav-link">Blog
+                                                    listing big</a></li>
+                                                <li class="nav-item"><a href="blog-medium.html"
+                                                                        class="nav-link">Blog listing medium</a>
+                                                </li>
+                                                <li class="nav-item"><a href="blog-small.html" class="nav-link">Blog
+                                                    listing small</a></li>
+                                                <li class="nav-item"><a href="blog-post.html" class="nav-link">Blog
+                                                    Post</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="sidebar sidebar1">
+
+        <div class="sidebar-wrapper scrollbar-inner">
+            <div class="sidebar-content">
+
+                <ul class="nav">
+                    <li class="nav-item active">
+                        <a data-toggle="collapse" href="#base">
+                            <i class="la flaticon-imac"></i>
+                            <p>监控中心</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse show" id="base">
+                            <ul class="nav nav-collapse">
+                                <li class="active">
+                                    <a href="index.html">
+                                        <span class="sub-item">资源总览</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">业务投屏</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">网络投屏</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">网络拓扑</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="collapse" href="#forms">
+                            <i class="la flaticon-settings"></i>
+                            <p>性能分析</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="forms">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">Windows系统</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">Linux系统</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">网络分析</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">Oracle分析</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">MYSql分析</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">SQLServer分析</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="collapse" href="#tables">
+                            <i class="la flaticon-list"></i>
+                            <p>业务分析</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="tables">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">HIS系统</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">LIS系统</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">PACS分析</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">EMR分析</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="collapse" href="#maps">
+                            <i class="la flaticon-network"></i>
+                            <p>专项管理</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="maps">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">告警管理</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">Windows管理</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">Linux管理</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">网络管理</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">数据库管理</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">中间件管理</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="collapse" href="#charts">
+                            <i class="la flaticon-analytics"></i>
+                            <p>趋势预测</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="charts">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">磁盘空间趋势</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">数据表空间趋势</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="collapse" href="#custompages1">
+                            <i class="la flaticon-graph-2"></i>
+                            <p>统计分析</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="custompages1">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">告警分析 1</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">工单分析</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">网络分析</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">数据库分析</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="collapse" href="#custompages">
+                            <i class="la flaticon-agenda"></i>
+                            <p>知识库</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="custompages">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">知识库管理</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="collapse" href="#submenu">
+                            <i class="la flaticon-envelope-3"></i>
+                            <p>指标解读</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="submenu">
+                            <ul class="nav nav-collapse">
+
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">监控指标</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">API接口</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End Sidebar -->
+
+    <div class="main-panel main-panel_index">
+        <div class="content content1">
+            <div class="page-inner page-inner_index" style="padding: 0;">
+                <!--banner-->
+                <div id="da-slider" class="da-slider">
+
+                    <div class="da-slide">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2>
+                                        <i>CLEAN &amp; FRESH</i>
+                                        <br>
+                                        <i>RESPONSIVE</i>
+                                        <br>
+                                        <i>DESIGN</i>
+                                    </h2>
+                                    <p>
+                                        <i>Lorem ipsum dolor amet</i>
+                                        <br/>
+                                        <i>veniam omnis</i>
+                                    </p>
+                                    <a href="#" class="btn btn-info btn-lg da-link">
+                                        Read more
+                                    </a>
+                                    <div class="da-img">
+                                        <img src="../img/2.png" alt="image01"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="da-slide">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2>
+                                        <i>RESPONSIVE VIDEO</i>
+                                        <br/>
+                                        <i>SUPPORT AND</i>
+                                        <br/>
+                                        <i>MANY MORE</i>
+                                    </h2>
+                                    <p>
+                                        <i>Lorem ipsum dolor amet</i>
+                                        <br/>
+                                        <i>tempor incididunt ut</i>
+                                    </p>
+                                    <a href="#" class="btn btn-info btn-lg da-link">
+                                        Read more
+                                    </a>
+                                    <div class="da-img">
+                                        <img src="../img/3.png" alt="image01"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="da-slide">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2>
+                                        <i>USING BEST WEB</i>
+                                        </br>
+                                        <i>SOLUTIONS WITH</i>
+                                        </br>
+                                        <i>HTML5/CSS3</i>
+                                    </h2>
+                                    <p>
+                                        <i>Lorem ipsum dolor amet</i>
+                                        <br/>
+                                        <i>tempor incididunt ut</i>
+                                        <br/>
+                                        <i>veniam omnis </i>
+                                    </p>
+                                    <a href="#" class="btn btn-info btn-lg da-link">
+                                        Read more
+                                    </a>
+                                    <div class="da-img">
+                                        <img src="../img/1.png" alt="image01"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav class="da-arrows">
+                        <span class="da-arrows-prev"></span>
+                        <span class="da-arrows-next"></span>
+                    </nav>
+                </div>
+
+                <div class="daohang">
+                    <div class="con">
+
+                        <div class="row row-card-no-pd row-card-no-pd_index">
+                            <div class="daohang_con_title">行业客户</div>
+                            <div class="col-sm-3 col-md-2">
+                                <div class="card card-stats card-round hov">
+                                    <a href="page2.html">
+                                        <div class="card-body card-body_daohang">
+                                            <div class="row align-items-center">
+                                                <div class="col col-stats ml-3 ml-sm-0">
+                                                    <div class="numbers numbers_daohang">
+                                                        <div class="card-category card-category1"><img src="../img/bi.png"/></div>
+                                                        <h4 class="card-title card-title1">云产品</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-2">
+                                <div class="card card-stats card-round hov">
+                                    <a href="page2.html">
+                                        <div class="card-body card-body_daohang">
+                                            <div class="row align-items-center">
+                                                <div class="col col-stats ml-3 ml-sm-0">
+                                                    <div class="numbers numbers_daohang">
+                                                        <div class="card-category card-category1"><img src="../img/bi.png"/></div>
+                                                        <h4 class="card-title card-title1">云产品</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-2">
+                                <div class="card card-stats card-round hov">
+                                    <a href="page2.html">
+                                        <div class="card-body card-body_daohang">
+                                            <div class="row align-items-center">
+                                                <div class="col col-stats ml-3 ml-sm-0">
+                                                    <div class="numbers numbers_daohang">
+                                                        <div class="card-category card-category1"><img src="../img/bi.png"/></div>
+                                                        <h4 class="card-title card-title1">云产品</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-2">
+                                <div class="card card-stats card-round hov">
+                                    <a href="page2.html">
+                                        <div class="card-body card-body_daohang">
+                                            <div class="row align-items-center">
+                                                <div class="col col-stats ml-3 ml-sm-0">
+                                                    <div class="numbers numbers_daohang">
+                                                        <div class="card-category card-category1"><img src="../img/bi.png"/></div>
+                                                        <h4 class="card-title card-title1">云产品</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-2">
+                                <div class="card card-stats card-round hov">
+                                    <a href="page2.html">
+                                        <div class="card-body card-body_daohang">
+                                            <div class="row align-items-center">
+                                                <div class="col col-stats ml-3 ml-sm-0">
+                                                    <div class="numbers numbers_daohang">
+                                                        <div class="card-category card-category1"><img src="../img/bi.png"/></div>
+                                                        <h4 class="card-title card-title1">云产品</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-2">
+                                <div class="card card-stats card-round hov">
+                                    <a href="page2.html">
+                                        <div class="card-body card-body_daohang">
+                                            <div class="row align-items-center">
+                                                <div class="col col-stats ml-3 ml-sm-0">
+                                                    <div class="numbers numbers_daohang">
+                                                        <div class="card-category card-category1"><img src="../img/bi.png"/></div>
+                                                        <h4 class="card-title card-title1">云产品</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-2">
+                                <div class="card card-stats card-round hov">
+                                    <a href="page2.html">
+                                        <div class="card-body card-body_daohang">
+                                            <div class="row align-items-center">
+                                                <div class="col col-stats ml-3 ml-sm-0">
+                                                    <div class="numbers numbers_daohang">
+                                                        <div class="card-category card-category1"><img src="../img/bi.png"/></div>
+                                                        <h4 class="card-title card-title1">云产品</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-2">
+                                <div class="card card-stats card-round hov">
+                                    <a href="page2.html">
+                                        <div class="card-body card-body_daohang">
+                                            <div class="row align-items-center">
+                                                <div class="col col-stats ml-3 ml-sm-0">
+                                                    <div class="numbers numbers_daohang">
+                                                        <div class="card-category card-category1"><img src="../img/bi.png"/></div>
+                                                        <h4 class="card-title card-title1">云产品</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-2">
+                                <div class="card card-stats card-round hov">
+                                    <a href="page2.html">
+                                        <div class="card-body card-body_daohang">
+                                            <div class="row align-items-center">
+                                                <div class="col col-stats ml-3 ml-sm-0">
+                                                    <div class="numbers numbers_daohang">
+                                                        <div class="card-category card-category1"><img src="../img/bi.png"/></div>
+                                                        <h4 class="card-title card-title1">云产品</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-2">
+                                <div class="card card-stats card-round hov">
+                                    <a href="page2.html">
+                                        <div class="card-body card-body_daohang">
+                                            <div class="row align-items-center">
+                                                <div class="col col-stats ml-3 ml-sm-0">
+                                                    <div class="numbers numbers_daohang">
+                                                        <div class="card-category card-category1"><img src="../img/bi.png"/></div>
+                                                        <h4 class="card-title card-title1">云产品</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-2">
+                                <div class="card card-stats card-round hov">
+                                    <a href="page2.html">
+                                        <div class="card-body card-body_daohang">
+                                            <div class="row align-items-center">
+                                                <div class="col col-stats ml-3 ml-sm-0">
+                                                    <div class="numbers numbers_daohang">
+                                                        <div class="card-category card-category1"><img src="../img/bi.png"/></div>
+                                                        <h4 class="card-title card-title1">云产品</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-2">
+                                <div class="card card-stats card-round hov">
+                                    <a href="page2.html">
+                                        <div class="card-body card-body_daohang">
+                                            <div class="row align-items-center">
+                                                <div class="col col-stats ml-3 ml-sm-0">
+                                                    <div class="numbers numbers_daohang">
+                                                        <div class="card-category card-category1"><img src="../img/bi.png"/></div>
+                                                        <h4 class="card-title card-title1">云产品</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Sidebar -->
+                <!--热销产品-->
+                <div class="rexiao">
+                    <div>热销产品</div>
+                    <div class="row row-demo-grid re">
+                        <div class="col-12 col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="lei">
+                                        <div>弹性计算 ></div>
+                                        <a href="#" class="lei_a">弹性云服务器 ECS</a>
+                                        <a href="#" class="lei_a">GPU加速云服务器</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <div class="card">
+                                <div class="card-body"><code>col-12 col-md-8</code></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-card-no-pd">
+                    <div class="col-sm-12 col-md-12 jichu" style="margin-bottom: 10px;">基础数据</div>
+
+                    <div class="col-sm-4 col-md-4">
+                        <div class="card card-stats card-round hov">
+                            <a href="page2.html">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <!--<div class="col-icon">-->
+                                        <!--<div class="icon-big text-center icon-primary bubble-shadow-small">-->
+                                        <!--<i class="fas fa-users"></i>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
+                                        <div class="col col-stats ml-3 ml-sm-0">
+                                            <div class="numbers">
+                                                <p class="card-category">资产总数</p>
+                                                <h4 class="card-title">120</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <div class="card card-stats card-round hov">
+                            <a href="page2.html">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <!--<div class="col-icon">-->
+                                        <!--<div class="icon-big text-center icon-info bubble-shadow-small">-->
+                                        <!--<i class="far fa-newspaper"></i>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
+                                        <div class="col col-stats ml-3 ml-sm-0">
+                                            <div class="numbers">
+                                                <p class="card-category">物理主机</p>
+                                                <h4 class="card-title">10</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <div class="card card-stats card-round hov">
+                            <a href="page2.html">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <!--<div class="col-icon">-->
+                                        <!--<div class="icon-big text-center icon-success bubble-shadow-small">-->
+                                        <!--<i class="far fa-chart-bar"></i>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
+                                        <div class="col col-stats ml-3 ml-sm-0">
+                                            <div class="numbers">
+                                                <p class="card-category">虚拟机</p>
+                                                <h4 class="card-title">90</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <div class="card card-stats card-round hov">
+                            <a href="page2.html">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <!--<div class="col-icon">-->
+                                        <!--<div class="icon-big text-center icon-secondary bubble-shadow-small">-->
+                                        <!--<i class="far fa-check-circle"></i>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
+                                        <div class="col col-stats ml-3 ml-sm-0">
+                                            <div class="numbers">
+                                                <p class="card-category">网络设备</p>
+                                                <h4 class="card-title">10</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <div class="card card-stats card-round hov">
+                            <div class="card-body">
+                                <a href="page2.html">
+                                    <div class="row align-items-center">
+                                        <!--<div class="col-icon">-->
+                                        <!--<div class="icon-big text-center icon-secondary bubble-shadow-small">-->
+                                        <!--<i class="far fa-check-circle"></i>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
+                                        <div class="col col-stats ml-3 ml-sm-0">
+                                            <div class="numbers">
+                                                <p class="card-category">数据库</p>
+                                                <h4 class="card-title">57</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <div class="card card-stats card-round hov">
+                            <div class="card-body">
+                                <a href="page2.html">
+                                    <div class="row align-items-center">
+                                        <!--<div class="col-icon">-->
+                                        <!--<div class="icon-big text-center icon-secondary bubble-shadow-small">-->
+                                        <!--<i class="far fa-check-circle"></i>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
+                                        <div class="col col-stats ml-3 ml-sm-0">
+                                            <div class="numbers">
+                                                <p class="card-category">告警总数</p>
+                                                <h4 class="card-title">1140</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 fangwen" style="margin-bottom: 10px;">最近访问的服务</div>
+                    <div class="col-sm-2 col-md-2">
+                        <div class="card card-stats card-round hov">
+                            <a href="page2.html">
+                                <div class="card-body card-body1">
+                                    <div class="row align-items-center">
+                                        <div class="col col-stats ml-3 ml-sm-0">
+                                            <div class="numbers1">
+                                                <p class="card-category name">物理主机</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-md-2">
+                        <div class="card card-stats card-round hov">
+                            <a href="page2.html">
+                                <div class="card-body card-body1">
+                                    <div class="row align-items-center">
+                                        <div class="col col-stats ml-3 ml-sm-0">
+                                            <div class="numbers1">
+                                                <p class="card-category name">虚拟机</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row1">
+                    <div class="col-md-6">
+                        <div class="card card1">
+                            <div class="card-header">
+                                <div class="card-title">云监控</div>
+                            </div>
+                            <div class="card-body">
+                                <ol class="activity-feed">
+                                    <li class="feed-item feed-item-secondary">
+                                        <a href="#">
+                                            <time class="date" datetime="9-25">告警中</time>
+                                            <span class="text">0</span>
+                                        </a>
+                                    </li>
+                                    <li class="feed-item feed-item-success">
+                                        <a href="#">
+                                            <time class="date" datetime="9-25">数据不足</time>
+                                            <span class="text">8</span>
+                                        </a>
+                                    </li>
+                                    <li class="feed-item feed-item-info">
+                                        <a href="#">
+                                            <time class="date" datetime="9-25">近7天告警总次数</time>
+                                            <span class="text">10</span>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card1">
+                            <div class="card-header">
+                                <div class="card-title">ECS资源监控</div>
+                            </div>
+                            <div class="card-body">
+                                <ol class="activity-feed">
+                                    <li class="feed-item feed-item-secondary">
+                                        <a href="#">
+                                            <time class="date" datetime="9-25">磁盘读取速率</time>
+                                            <span class="text">123.90KB/s</span>
+                                        </a>
+                                    </li>
+                                    <li class="feed-item feed-item-success">
+                                        <a href="#">
+                                            <time class="date" datetime="9-25">网络流入速率</time>
+                                            <span class="text">1.37Kbit/s</span>
+                                        </a>
+                                    </li>
+                                    <li class="feed-item feed-item-info">
+                                        <a href="#">
+                                            <time class="date" datetime="9-25">近7天告警总次数</time>
+                                            <span class="text">10</span>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom template | don't include it in your project! -->
+    <div class="custom-template">
+        <div class="title">Settings</div>
+        <div class="custom-content">
+            <div class="switcher">
+                <div class="switch-block">
+                    <h4>Topbar</h4>
+                    <div class="btnSwitch">
+                        <button type="button" class="selected changeMainHeaderColor" data-color="gray"></button>
+                        <button type="button" class="changeMainHeaderColor" data-color="blue"></button>
+                        <button type="button" class="changeMainHeaderColor" data-color="purple"></button>
+                        <button type="button" class="changeMainHeaderColor" data-color="light-blue"></button>
+                        <button type="button" class="changeMainHeaderColor" data-color="green"></button>
+                        <button type="button" class="changeMainHeaderColor" data-color="orange"></button>
+                        <button type="button" class="changeMainHeaderColor" data-color="red"></button>
+                    </div>
+                </div>
+                <div class="switch-block">
+                    <h4>Background</h4>
+                    <div class="btnSwitch">
+                        <button type="button" class="changeBackgroundColor" data-color="bg2"></button>
+                        <button type="button" class="changeBackgroundColor " data-color="bg1"></button>
+                        <button type="button" class="changeBackgroundColor" data-color="bg3"></button>
+                        <button type="button" class="changeBackgroundColor selected" data-color="bg4"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="custom-toggle">
+            <i class="flaticon-settings"></i>
+        </div>
+    </div>
+    <!-- End Custom template -->
+</div>
+
+<!--   Core JS Files   -->
+<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="../assets/js/core/popper.min.js"></script>
+<script src="../assets/js/core/bootstrap.min.js"></script>
+
+<!-- jQuery UI -->
+<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+<!-- jQuery Scrollbar -->
+<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+<!-- Moment JS -->
+<script src="../assets/js/plugin/moment/moment.min.js"></script>
+
+<!-- Chart JS -->
+<script src="../assets/js/plugin/chart.js/chart.min.js"></script>
+
+<!-- jQuery Sparkline -->
+<script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+<!-- Chart Circle -->
+<script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
+
+<!-- Datatables -->
+<script src="../assets/js/plugin/datatables/datatables.min.js"></script>
+
+<!-- Bootstrap Notify -->
+<script src="../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+<!-- Bootstrap Toggle -->
+<script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+
+<!-- jQuery Vector Maps -->
+<script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+<script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+
+<!-- Google Maps Plugin -->
+<script src="../assets/js/plugin/gmaps/gmaps.js"></script>
+
+<!-- Sweet Alert -->
+<script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+<!-- Azzara JS -->
+<script src="../assets/js/ready.min.js"></script>
+
+<!-- Azzara DEMO methods, don't include it in your project! -->
+<script src="../assets/js/setting-demo.js"></script>
+<script src="../assets/js/demo.js"></script>
+<!--banner-->
+<script type="text/javascript" src="../js/js/hover-dropdown.js"></script>
+<script defer src="../js/js/jquery.flexslider.js"></script>
+<script type="text/javascript" src="../js/js/jquery.bxslider.js"></script>
+<script type="text/javascript" src="../js/jquery.parallax-1.1.3.js"></script>
+<script src="../js/js/wow.min.js"></script>
+<script src="../js/js/owl.carousel.js"></script>
+<script src="../js/js/jquery.easing.min.js"></script>
+<script src="../js/js/link-hover.js"></script>
+<script src="../js/js/superfish.js"></script>
+<script type="text/javascript" src="../js/js/parallax-slider/jquery.cslider.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        $('.main-panel_index .content1 .page-inner #da-slider').cslider({
+            autoplay: true,
+            bgincrement: 100
+        });
+
+    });
+</script>
+
+</body>
+</html>

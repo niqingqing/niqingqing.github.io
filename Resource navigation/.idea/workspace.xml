@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e50a8efe-a063-4d61-bf36-5c726da9c862" name="Default" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="F:/.." />
+  </component>
+  <component name="ProjectId" id="1cFIu3f4b4hdzSjnvgR0OjKBak8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="F:/erlingnian/大数据网页/代码/echarts-四个大屏页面" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e50a8efe-a063-4d61-bf36-5c726da9c862" name="Default" comment="" />
+      <created>1583731221924</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583731221924</updated>
+      <workItem from="1583731224473" duration="16303000" />
+      <workItem from="1583805528075" duration="9375000" />
+      <workItem from="1583913786354" duration="15482000" />
+      <workItem from="1583930317542" duration="7501000" />
+      <workItem from="1583979074442" duration="9625000" />
+      <workItem from="1583999859512" duration="6335000" />
+      <workItem from="1584006713600" duration="1757000" />
+      <workItem from="1584010887677" duration="2099000" />
+      <workItem from="1584013410848" duration="415000" />
+      <workItem from="1584019148127" duration="420000" />
+      <workItem from="1584059853339" duration="3485000" />
+      <workItem from="1584342287400" duration="198000" />
+      <workItem from="1584346352137" duration="3955000" />
+      <workItem from="1584409403590" duration="8335000" />
+      <workItem from="1584423132403" duration="9667000" />
+      <workItem from="1584433356503" duration="4593000" />
+      <workItem from="1584492047389" duration="2352000" />
+      <workItem from="1584501953659" duration="6551000" />
+      <workItem from="1590118135724" duration="7000" />
+      <workItem from="1592014663933" duration="6100000" />
+      <workItem from="1592186341555" duration="115000" />
+      <workItem from="1592214796582" duration="2840000" />
+      <workItem from="1592268485549" duration="10693000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1592288810941">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1592288810941" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1592274649505">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592274649505" />
+  </component>
+</project>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>我是页面二</div>
+    <script>
+        // window.addEventListener("popstate", function(e) {
+        //     alert("页面2返回");//根据自己的需求实现自己的功能
+        // }, false);
+            alert(1);
+        pushHistory();
+        window.addEventListener("popstate", function (e) {
+            alert("好嗨哟，感觉到达了人生巅峰！");//根据自己的需求实现的功能
+        }, false);
+        function pushHistory() {
+            var state = {
+                title: "title",
+                url: "#"
+            };
+            window.history.pushState(state, "title", "#");
+        }
+
+    </script>
+</body>
+
+</html>

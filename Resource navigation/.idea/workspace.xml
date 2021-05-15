@@ -10,9 +10,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -30,7 +30,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="F:/erlingnian/大数据网页/代码/echarts-四个大屏页面" />
+    <property name="last_opened_file_path" value="F:/erlingnian/大数据网页/代码/bigdata-轮播大屏页面" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -72,7 +72,18 @@
       <workItem from="1592014663933" duration="6100000" />
       <workItem from="1592186341555" duration="115000" />
       <workItem from="1592214796582" duration="2840000" />
-      <workItem from="1592268485549" duration="13629000" />
+      <workItem from="1592268485549" duration="13938000" />
+      <workItem from="1592373081413" duration="15492000" />
+      <workItem from="1592441225596" duration="6087000" />
+      <workItem from="1592472461864" duration="71000" />
+      <workItem from="1592536530787" duration="737000" />
+      <workItem from="1593849389582" duration="2596000" />
+      <workItem from="1594031405296" duration="2496000" />
+      <workItem from="1594119692630" duration="53000" />
+      <workItem from="1595303169243" duration="790000" />
+      <workItem from="1595313991990" duration="694000" />
+      <workItem from="1595499078734" duration="1307000" />
+      <workItem from="1595553472488" duration="131000" />
     </task>
     <servers />
   </component>
@@ -80,13 +91,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1592288810941">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1595553603153">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1592288810941" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1592274649505">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595553603153" />
+    <state x="536" y="182" key="Registry" timestamp="1592379429848">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592274649505" />
+    <state x="536" y="182" key="Registry/0.0.1920.1040@0.0.1920.1040" timestamp="1592379429848" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1592386798455">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592386798455" />
   </component>
 </project>

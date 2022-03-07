@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- import Vue before Element -->
+		<script src="./js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<script src="js/jquery-3.1.1.min.js"></script>
+	</head>
+	<body>
+		<div id="pc">
+			<div class="test">
+				<div class="image_list">
+					<el-upload ref="upload" class="upload-demo"  multiple capture="camera"
+						accept="image/*"  :before-upload="beforeAvatarUpload" 
+						:on-error="uploadFail" :on-success="handleAvatarSuccess" list-type="picture-card"
+						:show-file-list="false">
+						<i slot="default" class="el-icon-plus" />
+					</el-upload>
+					<!-- <el-dialog :visible.sync="dialogVisible">
+			        <img width="100%" :src="dialogImageUrl" alt="">
+			      </el-dialog> -->
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el: '#pc',
+			data: function() {
+				return {
+					dialogImageUrl: '',
+					// dialogVisible: false,
+					
+				
+				}
+			},
+			methods: {
+				// 上传文件成功
+				handleAvatarSuccess(res, file) {
+					this.mode = file.raw
+					this.fileName = file.raw.name
+					this.$refs.upload.clearFiles()
+					this.$message({
+						message: '上传成功',
+						type: 'success'
+					})
+				},
+				// 上传文件之前
+				beforeAvatarUpload(file) {
+					// 在这里可以处理传递给后台的参数
+					this.$message({
+						message: '上传文件',
+						type: 'success'
+					})
+				},
+				// 上传错误
+				uploadFail(err, file, fileList) {
+					console.log(err, '上传错误')
+					this.$refs.upload.abort()
+					this.$refs.upload.clearFiles()
+					this.$message({
+						message: '上传错误!!',
+						type: 'error'
+					})
+				}
+			}
+		})
+	</script>
+
+</html>

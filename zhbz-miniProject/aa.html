@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html style="font-size: 24px">
+	<head>
+		<title>js点击按钮显示再点击空白地方隐藏</title>
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- import Vue before Element -->
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<style type="text/css">
+			#div {
+				border: 1px solid red;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				display: none;
+				font-size: 2rem
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div">这是div的内容</div>
+		<button onclick="show()">点击我</button>
+		<div id="app">
+			<el-button @click="visible = true">Button</el-button>
+			<el-dialog :visible.sync="visible" title="Hello world">
+				<p>Try Element</p>
+			</el-dialog>
+			<el-radio v-model="radio" label="1" @change="aa">备选项</el-radio>
+			<el-radio v-model="radio" label="2" @change="aa">备选项</el-radio>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		function show(event) {
+			//取消冒泡
+			let oevent = event || window.event
+			if (document.all) {
+				oevent.cancelBubble = true
+			} else {
+				oevent.stopPropagation()
+			}
+			if (document.getElementById('div').style.display === 'none' || document.getElementById('div').style.display ===
+				'') {
+				document.getElementById('div').style.display = 'block'
+			} else {
+				document.getElementById('div').style.display = 'none'
+			}
+		}
+		document.onclick = function() {
+			document.getElementById('div').style.display = 'none'
+		}
+		document.getElementById('div').onclick = function(event) {
+			let oevent = event || window.event
+			oevent.stopPropagation()
+		}
+	</script>
+	<script>
+		new Vue({
+			el: '#app',
+			data: function() {
+				return {
+					visible: false,
+					radio: '1',
+				}
+			},
+			methods:{
+				aa(){
+					console.log(this.radio);
+				}
+				
+			}
+		})
+	</script>
+</html>

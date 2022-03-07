@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible">
+		<script src="./js/jquery-3.1.1.min.js"></script>
+	</head>
+	<body>
+		<img class="head-img mui-action-preview" id="head-img1" src="" onclick="sahngchang()"
+			style="width: 100px;height: 100px;background: red;" />
+	</body>
+	<script>
+		function sahngchang() {
+			console.log(2222)
+			var buttonTit = [{
+				title: "拍照"
+			}, {
+				title: "从手机相册选择"
+			}];
+			plus.nativeUI.actionSheet({
+				title: "上传图片",
+				cancel: "取消",
+				buttons: buttonTit
+			}, function(b) {
+				/*actionSheet 按钮点击事件*/
+				switch (b.index) {
+					case 0:
+						break;
+					case 1:
+						getImage(); /*拍照*/
+						break;
+					case 2:
+						galleryImg(); /*打开相册*/
+						break;
+					default:
+						break;
+				}
+			})
+		}
+		//拍照
+		function getImage() {
+			var cmr = plus.camera.getCamera(1); //获取后面的摄像头
+			cmr.captureImage(function(p) {
+
+				//拍照成功，返回路径 p，但是不是绝对路径
+				//通过p，读取图片文件
+				var wt = plus.nativeUI.showWaiting();
+				plus.io.resolveLocalFileSystemURL(p, function(entry) {
+					//entry为获取的文件，.file()方法可以获取该文件的文件名、大小等信息，返回包含文件信息的对象
+					entry.file(function(file) {
+						// alert("getFile:" + JSON.stringify(file));
+						var fileReader = new plus.io.FileReader(); //开启读取文件
+						fileReader.readAsDataURL(file, 'utf-8'); //将文件数据对象信息file进行url base64编码
+						fileReader.onloadend = function(evt) {
+							//压缩图片
+							wt.close();
+							$('#head-img1').attr('src', evt.target.result)
+							alert(evt.target.result)
+							$.ajax({
+								url: "/api/papers/upload",
+								type: "post",
+								dataType: 'json',
+								data: {
+									file: evt.target.result
+								},
+								success: function(data) {
+									var dataS = JSON.stringify(data);
+									if (data.code == 1) {
+										$('#head-img1').attr('src', data.src)
+										wt.close(); //关闭等待提示按钮
+									} else {
+										alert(data.msg)
+									}
+
+								}
+
+							});
+
+						}
+					})
+				}, function(e) {
+					alert(e.message);
+				});
+			}, function(e) {}, {
+				filename: "_doc/camera/"
+			}); //拍照
+		}
+
+		//从相册选择
+		function galleryImg() {
+			plus.gallery.pick(function(p) {
+				var wt = plus.nativeUI.showWaiting();
+				plus.io.resolveLocalFileSystemURL(p, function(entry) {
+					entry.file(function(file) {
+						var fileReader = new plus.io.FileReader(); //开启读取文件
+						fileReader.readAsDataURL(file, 'utf-8');
+
+						fileReader.onloadend = function(evt) {
+							$('#head-img1').attr('src', evt.target.result)
+							$.ajax({
+								url: "www.baidu.com", //根据具体提供的接口
+								type: "post",
+								dataType: 'json',
+								data: {
+									file: evt.target.result
+								},
+								success: function(data) {
+									var dataS = JSON.stringify(data);
+									if (data.code == 1) {
+										$('#head-img1').attr('src', data.src)
+										wt.close(); //关闭等待提示按钮
+									} else {
+										alert(data.msg)
+									}
+
+								}
+
+							});
+
+						}
+
+					})
+
+				})
+
+			});
+		}
+	</script>
+</html>

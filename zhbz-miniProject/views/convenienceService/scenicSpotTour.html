@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
+		<title>便民地图</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<script src="../../js/phone.js"></script>
+		<!-- <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" /> -->
+		<script type="text/jscript" src="../../js/jquery-3.1.1.min.js"></script>
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- import Vue before Element -->
+		<script src="../../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<!-- 引入vant -->
+		<link rel="stylesheet" href="../../css/vantCss.css" />
+		<script src="../../js/vueMin.js"></script>
+		<script src="../../js/vantMin.js"></script>
+		<script src="../../js/axios.js"></script>
+		<style>
+			.wrap {
+				padding: 0;
+				margin: 0;
+			}
+
+			#container {
+				width: 100%;
+				height: 100vh;
+			}
+
+			/**
+			  *放置input的div盒子
+			  *1.此处应我的项目需要，加了些特别的设置，如字体、背景色等，按需添加；
+			  *2.内层input不加边框，看起来效果会自然一点，所以外层div设置了边框和圆角*/
+			.box {
+				width: 96%;
+				height: 0.36rem;
+				position: absolute;
+				top: 0.6rem;
+				left: 50%;
+				z-index: 1;
+				transform: translateX(-50%);
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				background: #FFFFFF;
+				border: 1px solid #eeeeee;
+				border-radius: 6px;
+				font-size: 14px;
+			}
+
+			.box .input_text {
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+
+			/**
+			  *label标签样式 放在.box下，不至于影响其他的label
+			  *采取绝对定位，位置根据需求确定
+			*/
+			.box label {
+				width: 100%;
+				position: absolute;
+				top: 50%;
+				left: 4%;
+				transform: translateY(-50%);
+				z-index: 2;
+				color: #B2B2B2;
+				font-weight: normal;
+				font-size: 0.12rem;
+				margin-bottom: 0;
+
+			}
+
+			/**
+			  *input标签样式
+			  *宽度适应外层div
+			  *隐藏边框
+			  *这里有个小技巧，height与line-height值相等，可保证文字垂直居中；但我发现文字比图标略偏下，进行了微调；
+			*/
+			.box input {
+				width: 100%;
+				height: 0.36rem;
+				line-height: 0.36rem;
+				position: absolute;
+				top: 0;
+				left: 0;
+				text-indent: 10px;
+				border: none;
+				outline: none;
+				padding: 0;
+			}
+
+			/**
+			  *图标样式
+			  *绝对定位，自定义颜色
+			*/
+			.box .search {
+				width: 0.36rem;
+				height: 0.36rem;
+				color: #B2B2B2;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.box .search img {
+				width: 0.24rem;
+				height: 0.24rem;
+			}
+
+			.icon {
+				position: absolute;
+				top: 1.2rem;
+				right: 2%;
+			}
+
+			.location {
+				width: 0.3rem;
+				height: 0.3rem;
+			}
+
+			.location img {
+				width: 100%;
+				height: 100%;
+			}
+
+			.navigation {
+				width: 0.28rem;
+				height: 0.26rem;
+				margin-top: 0.12rem;
+			}
+
+			.navigation img {
+				width: 100%;
+				height: 100%;
+			}
+
+			/* 网格员弹窗 */
+			.pop {
+				width: 76%;
+				position: absolute;
+				left: 50%;
+				bottom: 3%;
+				transform: translateX(-50%);
+				background: #fff;
+				border-radius: 0.04rem;
+				padding: 0.08rem 0.14rem;
+				display: none;
+			}
+
+			.pop_title {
+				font-size: 0.16rem;
+				margin-bottom: 0.12rem;
+			}
+
+			.btn {
+				width: 0.2rem;
+				background: #efefef;
+				padding: 0.05rem;
+				font-size: 0.14rem;
+				position: fixed;
+				top: 1.5rem;
+				right: 0.1rem;
+				z-index: 99;
+				writing-mode: tb-rl;
+				letter-spacing: 0.01rem;
+				border: 1px solid #969696;
+				border-radius: 0.03rem;
+			}
+
+			.van-tabbar--fixed {
+				z-index: 999 !important;
+			}
+
+			.van-tabbar-item--active {
+				background: #1989fa;
+				color: #FFFFFF;
+			}
+
+			.tab {
+				width: 100%;
+				position: fixed;
+				bottom: 0;
+				z-index: 999;
+				font-size: 0.16rem;
+				display: flex;
+				justify-content: space-between;
+				border-top: 1px solid #797979;
+			}
+
+			.cherryOrchard,
+			.folkVillage,
+			.peasantFeast,
+			.hotel {
+				width: 25%;
+				height: 0.4rem;
+				line-height: 0.4rem;
+				text-align: center;
+				background: #ffffff;
+			}
+
+			.cherryOrchard,
+			.folkVillage,
+			.peasantFeast {
+				border-right: 1px solid #797979;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="container-top">
+			<!--返回-->
+			<div class="back" onclick="back()">
+				<img src="../../img/back.png">
+			</div>
+			<div class="headTitle">智慧北宅便民地图</div>
+			<div class="more"><img src="../../img/more.png" /></div>
+		</header>
+		<div class="wrap" id="pc">
+			<div class="box">
+				<div class="input_text">
+					<label for="input" id="q_label">请输入关键字</label>
+					<input id="input" type="text">
+				</div>
+				<div class="am-icon-search search" id="q_i" @click="search()"><img src="../../img/search.png" /></div>
+			</div>
+			<!-- 地图 -->
+			<div id="container"></div>
+			<div id="setFitView" class="btn">地图自适应显示</div>
+			<!-- 下方tab -->
+			<van-tabbar v-model="active" @change="onChange">
+				<van-tabbar-item>樱桃园</van-tabbar-item>
+				<van-tabbar-item>民俗村</van-tabbar-item>
+				<van-tabbar-item>农家宴</van-tabbar-item>
+				<van-tabbar-item>宾馆</van-tabbar-item>
+			</van-tabbar>
+		</div>
+
+	</body>
+	<script src="https://webapi.amap.com/maps?v=1.4.15&key=您申请的key值"></script>
+	<script>
+		// 返回
+		function back() {
+			window.history.go(-1); //返回上一页
+		}
+		new Vue({
+			el: '#pc',
+			data: function() {
+				return {
+					// 樱桃园
+					cherryOrchard: [{
+						icon: '../../img/yingtao.png',
+						position: [120.516744, 36.18756] //东西经，南北纬
+					}, {
+						icon: '../../img/yingtao.png',
+						position: [120.516744, 36.20999]
+					}, {
+						icon: '../../img/yingtao.png',
+						position: [120.521744, 36.20056]
+					}, {
+						icon: '../../img/yingtao.png',
+						position: [120.526744, 36.18456]
+					}, {
+						icon: '../../img/yingtao.png',
+						position: [120.516744, 36.20456]
+					}, {
+						icon: '../../img/yingtao.png',
+						position: [120.506744, 36.19456]
+					}],
+					// 民俗村
+					folkVillage: [{
+						icon: '../../img/xiangcun.png',
+						position: [120.539744, 36.16756] //东西经，南北纬
+					}, {
+						icon: '../../img/xiangcun.png',
+						position: [120.526744, 36.20999]
+					}, {
+						icon: '../../img/xiangcun.png',
+						position: [120.531744, 36.20056]
+					}, {
+						icon: '../../img/xiangcun.png',
+						position: [120.526744, 36.18456]
+					}, {
+						icon: '../../img/xiangcun.png',
+						position: [120.510744, 36.20456]
+					}, {
+						icon: '../../img/xiangcun.png',
+						position: [120.516744, 36.19456]
+					}],
+					// 农家宴
+					peasantFeast: [{
+						icon: '../../img/nongjiayan.png',
+						position: [120.509744, 36.16756] //东西经，南北纬
+					}, {
+						icon: '../../img/nongjiayan.png',
+						position: [120.506744, 36.20999]
+					}, {
+						icon: '../../img/nongjiayan.png',
+						position: [120.531744, 36.20056]
+					}, {
+						icon: '../../img/nongjiayan.png',
+						position: [120.511744, 36.18456]
+					}, {
+						icon: '../../img/nongjiayan.png',
+						position: [120.510744, 36.20456]
+					}, {
+						icon: '../../img/nongjiayan.png',
+						position: [120.506744, 36.19456]
+					}],
+					// 宾馆
+					hotel: [{
+						icon: '../../img/hotel.png',
+						position: [120.520744, 36.16756] //东西经，南北纬
+					}, {
+						icon: '../../img/hotel.png',
+						position: [120.526744, 36.20999]
+					}, {
+						icon: '../../img/hotel.png',
+						position: [120.532744, 36.20056]
+					}, {
+						icon: '../../img/hotel.png',
+						position: [120.526744, 36.18456]
+					}, {
+						icon: '../../img/hotel.png',
+						position: [120.510744, 36.20456]
+					}, {
+						icon: '../../img/hotel.png',
+						position: [120.516744, 36.17456]
+					}],
+					// tab
+					active: '0',
+					tabList: [{
+						label: '樱桃园',
+						name: '0'
+					}, {
+						label: '民俗村',
+						name: '1'
+					}, {
+						label: '农家宴',
+						name: '2'
+					}, {
+						label: '宾馆',
+						name: '3'
+					}],
+					active: 0,
+				}
+			},
+			mounted() {
+				this.initMap(this.cherryOrchard);
+			},
+			methods: {
+				// 搜索
+				search() {
+					console.log('点击搜索按钮')
+				},
+
+				initMap(param) {
+					// console.log(param)
+					// 创建地图
+					var map = new AMap.Map('container', {
+						resizeEnable: true,
+						center: [120.516744, 36.18756],
+						zoom: 13
+					});
+
+					// 添加一些分布不均的点到地图上,地图上添加三个点标记，作为参照
+					param.forEach(function(marker) {
+						new AMap.Marker({
+							map: map,
+							icon: marker.icon,
+							position: [marker.position[0], marker.position[1]],
+							offset: new AMap.Pixel(-13, -30)
+						});
+					});
+
+					var setFitViewBtn = document.getElementById('setFitView');
+					// 添加事件监听, 使地图自适应显示到合适的范围
+					setFitViewBtn.onclick = function() {
+						// 第一个参数为空，表明用图上所有覆盖物 setFitview
+						// 第二个参数为false, 非立即执行
+						// 第三个参数设置上左下右的空白
+						map.setFitView(null, false, [150, 60, 100, 60]);
+					};
+				},
+				// tab切换
+				handleClick(tab, event) {
+					console.log(tab, event);
+					console.log(this.active)
+				},
+				onChange() {
+					if (this.active == 0) {
+						this.initMap(this.cherryOrchard);
+					} else if (this.active == 1) {
+						this.initMap(this.folkVillage);
+					} else if (this.active == 2) {
+						this.initMap(this.peasantFeast);
+					} else {
+						this.initMap(this.hotel);
+					}
+					console.log(this.active)
+				}
+			}
+		})
+
+		// 搜索
+		$(function() {
+			$('#input').on('keyup', function() {
+				var len = document.getElementById('input').value;
+				if (len == '') {
+					$('#q_label').show();
+					// $('#q_i').show();
+				} else {
+					$('#q_label').hide();
+					// $('#q_i').hide();
+				}
+			});
+		})
+	</script>
+</html>

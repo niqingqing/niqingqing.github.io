@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
+		<title>事件详情</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common.css" />
+		<script src="../../../js/phone.js"></script>
+		<!-- 使用vant -->
+		<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.2/lib/index.css"> -->
+		<link rel="stylesheet" href="../../../css/vantCss.css" />
+		<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script> -->
+		<script src="../../../js/vueMin.js"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/npm/vant@2.2/lib/vant.min.js"></script> -->
+		<script src="../../../js/vantMin.js"></script>
+		<!-- <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script> -->
+		<script src="../../../js/axios.js"></script>
+		<style>
+			.container-top {
+				top: 0;
+			}
+
+			.banner {
+				margin-top: 0.12rem;
+			}
+
+			.el-carousel__container {
+				height: 2rem;
+			}
+
+			.banner img {
+				width: 100%;
+				height: 100%;
+			}
+
+			.content {
+				display: flex;
+				justify-content: space-between;
+				margin-top: 0.12rem;
+			}
+
+			.conDetails {
+				width: 84%;
+			}
+
+			.reportSite,
+			.reportTime {
+				margin-top: 0.1rem;
+			}
+
+			.conPic {
+				width: 14%;
+			}
+
+			.desTitle,
+			.siteTitle,
+			.timeTitle {
+				font-size: 0.16rem;
+				font-weight: 700;
+				margin-bottom: 0.04rem;
+			}
+
+			.desDetails,
+			.siteDetails,
+			.timeDetails {
+				font-size: 0.14rem;
+				overflow: hidden;
+				display: -webkit-box;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 2;
+				/*要显示的行数*/
+				-webkit-box-orient: vertical;
+			}
+
+			.dealWith {
+				margin-top: 0.1rem;
+			}
+
+			.dealTitle {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.dealtext {
+				font-size: 0.16rem;
+				font-weight: 700;
+			}
+
+			#btn {
+				font-size: 0.12rem;
+			}
+
+			#spread {
+				height: 0px;
+				overflow: hidden;
+			}
+
+			.van-step--vertical .van-step__line {
+				top: 44px;
+			}
+
+			.stepItem {
+				height: 0.5rem;
+				background: #f2f2f2;
+				padding: 0.1rem;
+				margin-top: 0.05rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="container-top">
+			<!--返回-->
+			<div class="back" onclick="back()">
+				<img src="../../../img/back.png">
+			</div>
+			<div class="headTitle">上报记录</div>
+			<div class="more"><img src="../../../img/more.png" /></div>
+		</header>
+		<div class="wrap" id="app">
+			<div class="banner">
+				<van-swipe :autoplay="3000" lazy-render>
+					<van-swipe-item v-for="image in images" :key="image">
+						<img :src="image" />
+					</van-swipe-item>
+				</van-swipe>
+			</div>
+			<div class="content">
+				<div class="conDetails">
+					<div class="patrolDescription">
+						<div class="desTitle">巡查描述</div>
+						<div class="desDetails">随手拍描述模拟内容，随手拍描述模拟内容,随手拍描述模拟内容,随手拍描述模拟内容,随手拍描述模拟内容,随手拍描述模拟内容</div>
+					</div>
+					<div class="reportSite">
+						<div class="siteTitle">上报地点</div>
+						<div class="siteDetails">山东省青岛市市北区徐州路172号</div>
+					</div>
+					<div class="reportTime">
+						<div class="timeTitle">上报时间</div>
+						<div class="timeDetails">2021.12.1</div>
+					</div>
+				</div>
+				<div class="conPic"><img src="../../../img/deal.png" /></div>
+			</div>
+			<div class="dealWith">
+				<div class="dealTitle">
+					<div class="dealtext">办理经过</div>
+					<div class="dealButton" id="btn">收起
+						<van-icon name="arrow-up" />
+					</div>
+				</div>
+				<div class="timeLine" id="spread">
+					<van-steps direction="vertical" :active="0">
+						<van-step>
+							<p>2021-07-12 12:40</p>
+							<div class="stepItem">事件已处理</div>
+						</van-step>
+						<van-step>
+							<p>2021-07-11 13:40</p>
+							<div class="stepItem">事件已派发</div>
+						</van-step>
+						<van-step>
+							<p>2021-07-10 10:50</p>
+							<div class="stepItem">事件已揽收</div>
+						</van-step>
+					</van-steps>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script>
+		// 返回
+		function back() {
+			window.history.go(-1); //返回上一页
+		}
+		new Vue({
+			el: '#app',
+			data() {
+				return {
+					// banner
+					images: ['../../../img/img1.png', '../../../img/img2.png'],
+				}
+			},
+			methods: {}
+		});
+	</script>
+	<script>
+		// 展开与收起
+		/*获得btn*/
+		var btn = document.getElementById('btn')
+		var spread = document.getElementById('spread')
+		var iSpread = false
+		/*高度*/
+		var height = spread.scrollHeight
+		/*总时间*/
+		var time = 420;
+		/*间隔*/
+		var interval = 8.4
+		/*速度*/
+		var speed = height / (time / interval)
+		//一进页面先展开执行
+		var speeds = 0
+		var timer = setInterval(function() {
+			speeds += speed
+			spread.style.height = speeds + 'px'
+
+			if (parseInt(spread.style.height) >= height) {
+				clearTimeout(timer)
+				btn.disabled = ''
+			}
+		}, interval)
+		iSpread = !iSpread
+		// end
+		btn.onclick = function(e) {
+			btn.disabled = 'disabled'
+			if (!iSpread) {
+				var speeds = 0
+				var timer = setInterval(function() {
+					speeds += speed
+					spread.style.height = speeds + 'px'
+
+					if (parseInt(spread.style.height) >= height) {
+						clearTimeout(timer)
+						btn.disabled = ''
+					}
+				}, interval)
+				this.innerHTML = '收起 <i class="van-icon van-icon-arrow-up"></i>'
+			} else {
+				var speeds = height
+				this.innerHTML = '展开 <i class="van-icon van-icon-arrow-down"></i>'
+				var timer = setInterval(function() {
+					speeds -= speed
+					spread.style.height = speeds + 'px'
+					if (speeds <= 0) {
+						clearTimeout(timer)
+						btn.disabled = ''
+					}
+				}, interval)
+			}
+			iSpread = !iSpread
+		}
+	</script>
+
+</html>

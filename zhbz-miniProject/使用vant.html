@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.2/lib/index.css"> -->
+		<link rel="stylesheet" href="css/vantCss.css" />
+		<style>
+			.van-step--vertical .van-step__circle-container {
+				top: 37px;
+			}
+
+			.van-step--vertical .van-step__line {
+				top: 44px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="vue">
+			<van-pull-refresh v-model="loading" @refresh="onRefresh">
+				<p>刷新次数: {{ count }}</p>
+				<van-list v-model:loading="loading" :finished="finished" finished-text="没有更多了" offset="700"
+					@load="on()">
+					<van-cell v-for="item in list" :key="item" :title="item" />
+				</van-list>
+
+			</van-pull-refresh>
+			<van-steps direction="vertical" :active="0">
+				<van-step>
+					<h3>【城市】物流状态1</h3>
+					<p>2016-07-12 12:40</p>
+				</van-step>
+				<van-step>
+					<h3>【城市】物流状态2</h3>
+					<p>2016-07-11 10:00</p>
+				</van-step>
+				<van-step>
+			  <h3>快件已发货</h3>
+					<p>2016-07-10 09:30</p>
+				</van-step>
+			</van-steps>
+		</div>
+
+	</body>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script> -->
+	<script src="./js/vueMin.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vant@2.2/lib/vant.min.js"></script> -->
+	<script src="js/vantMin.js"></script>
+	<!-- <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script> -->
+	<script src="js/axios.js"></script>
+	<script>
+		new Vue({
+			el: '#vue',
+			data() {
+				return {
+					list: [1,2,3,4,5,6,7,8,9,10,1,2,1,5,6,2,45,2,5,2,],
+					onLoad: false,
+					loading: false,
+					finished: false,
+					count: 0,
+					loading: false,
+				}
+			},
+			methods: {
+				onRefresh() {
+					setTimeout(() => {
+						vant.Toast('刷新成功');
+						this.loading = false;
+						this.count++;
+					}, 1000);
+				},
+				on() {
+					console.log(this.list.length)
+					setTimeout(() => {
+						for (let i = 0; i < 100; i++) {
+							this.list.push(i);
+						}
+
+						// 加载状态结束
+						this.loading = false;
+
+						// 数据全部加载完成
+						if (this.list.length >= 40) {
+							this.finished = true;
+						}
+					}, 1000);
+				}
+			}
+		});
+	</script>
+
+
+</html>

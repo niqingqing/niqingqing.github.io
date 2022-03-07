@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">   
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
+		<title>便民地图</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<script src="../../js/phone.js"></script>
+		<!-- <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" /> -->
+		<script type="text/jscript" src="../../js/jquery-3.1.1.min.js"></script>
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- import Vue before Element -->
+		<script src="../../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<style>
+			.wrap {
+				padding: 0;
+				margin: 0;
+			}
+
+			#container {
+				width: 100%;
+				height: 100vh;
+			}
+
+			/**
+			  *放置input的div盒子
+			  *1.此处应我的项目需要，加了些特别的设置，如字体、背景色等，按需添加；
+			  *2.内层input不加边框，看起来效果会自然一点，所以外层div设置了边框和圆角*/
+			.box {
+				width: 96%;
+				height: 0.36rem;
+				position: absolute;
+				top: 0.6rem;
+				left: 50%;
+				z-index: 1;
+				transform: translateX(-50%);
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				background: #FFFFFF;
+				border: 1px solid #eeeeee;
+				border-radius: 6px;
+				font-size: 14px;
+			}
+
+			.box .input_text {
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+
+			/**
+			  *label标签样式 放在.box下，不至于影响其他的label
+			  *采取绝对定位，位置根据需求确定
+			*/
+			.box label {
+				width: 100%;
+				position: absolute;
+				top: 50%;
+				left: 4%;
+				transform: translateY(-50%);
+				z-index: 2;
+				color: #B2B2B2;
+				font-weight: normal;
+				font-size: 0.12rem;
+				margin-bottom: 0;
+
+			}
+
+			/**
+			  *input标签样式
+			  *宽度适应外层div
+			  *隐藏边框
+			  *这里有个小技巧，height与line-height值相等，可保证文字垂直居中；但我发现文字比图标略偏下，进行了微调；
+			*/
+			.box input {
+				width: 100%;
+				height: 0.36rem;
+				line-height: 0.36rem;
+				position: absolute;
+				top: 0;
+				left: 0;
+				text-indent: 10px;
+				border: none;
+				outline: none;
+				padding: 0;
+			}
+
+			/**
+			  *图标样式
+			  *绝对定位，自定义颜色
+			*/
+			.box .search {
+				width: 0.36rem;
+				height: 0.36rem;
+				color: #B2B2B2;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.box .search img {
+				width: 0.24rem;
+				height: 0.24rem;
+			}
+
+			.icon {
+				position: absolute;
+				top: 1.2rem;
+				right: 2%;
+			}
+
+			.location {
+				width: 0.3rem;
+				height: 0.3rem;
+			}
+
+			.location img {
+				width: 100%;
+				height: 100%;
+			}
+
+			.navigation {
+				width: 0.28rem;
+				height: 0.26rem;
+				margin-top: 0.12rem;
+			}
+
+			.navigation img {
+				width: 100%;
+				height: 100%;
+			}
+
+			/* 网格员弹窗 */
+			.pop {
+				width: 76%;
+				position: absolute;
+				left: 50%;
+				bottom: 3%;
+				transform: translateX(-50%);
+				background: #fff;
+				border-radius: 0.04rem;
+				padding: 0.08rem 0.14rem;
+				display: none;
+			}
+
+			.pop_title {
+				font-size: 0.16rem;
+				margin-bottom: 0.12rem;
+			}
+
+			.list {
+				font-size: 0.14rem;
+			}
+
+			.list_item {
+				display: flex;
+				justify-content: space-between;
+				line-height: 0.26rem;
+			}
+
+			.list_item div:nth-child(1) {
+				width: 36%;
+			}
+
+			.list_item div:nth-child(2) {
+				width: 64%;
+				text-align: right;
+			}
+
+			.popSearch {
+				width: 86%;
+				position: absolute;
+				left: 50%;
+				bottom: 3%;
+				transform: translateX(-50%);
+				background: #fff;
+				border-radius: 0.04rem;
+				padding: 0.08rem 0.14rem;
+				display: none;
+			}
+
+			.searchTitle {
+				font-size: 0.16rem;
+				text-align: center;
+				margin-bottom: 0.16rem;
+			}
+
+			.search_list {
+				display: grid;
+				grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
+				grid-row-gap: 0.12rem;
+				height: 1rem;
+				overflow: scroll;
+			}
+
+			.search_list_item {}
+
+			.search_pic {
+				display: grid;
+				justify-content: center;
+				/* width: 0.24rem; */
+				/* height: 0.24rem; */
+			}
+
+			.search_pic img {
+				width: 0.24rem;
+				height: 0.24rem;
+				/* width: 100%; */
+				/* height: 100%; */
+			}
+
+			.search_text {
+				font-size: 0.14rem;
+				margin-top: 0.02rem;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="container-top">
+			<!--返回-->
+			<div class="back" onclick="back()">
+				<img src="../../img/back.png">
+			</div>
+			<div class="headTitle">智慧北宅便民地图</div>
+			<div class="more"><img src="../../img/more.png" /></div>
+		</header>
+		<div class="wrap" id="pc">
+			<div class="box">
+				<div class="input_text">
+					<label for="input" id="q_label">请输入关键字</label>
+					<input id="input" type="text">
+				</div>
+				<div class="am-icon-search search" id="q_i" @click="search()"><img src="../../img/search.png" /></div>
+			</div>
+			<!-- 地图 -->
+			<div id="container"></div>
+			<div class="icon">
+				<div class="location" onclick="local()"><img src="../../img/location.png" /></div>
+				<div class="navigation" onclick="popSearch()"><img src="../../img/daohang.png" /></div>
+			</div>
+			<!-- 网格员信息弹窗 -->
+			<div class="pop" id="pop">
+				<div class="pop_title">网格员信息</div>
+				<div class="list">
+					<div class="list_item">
+						<div>网格长：张三</div>
+						<div>联系电话：15863524210</div>
+					</div>
+					<div class="list_item">
+						<div>网格员：李四</div>
+						<div>联系电话：15863524210</div>
+					</div>
+					<div class="list_item">
+						<div>协警：王五</div>
+						<div>联系电话：15863524210</div>
+					</div>
+					<div class="list_item">
+						<div>小组长：赵六</div>
+						<div>联系电话：15863524210</div>
+					</div>
+				</div>
+			</div>
+			<!-- 快速导航 -->
+			<div class="popSearch" id="popSearch">
+				<div class="searchTitle">快速导航</div>
+				<div class="search_list">
+					<div class="search_list_item" v-for="(item,index) in quickNavigation">
+						<div class="search_pic"><img :src="item.img" /></div>
+						<div class="search_text">{{item.title}}</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+	<script src="https://webapi.amap.com/maps?v=1.4.15&key=您申请的key值"></script>
+	<script>
+		// 返回
+		function back() {
+			window.history.go(-1); //返回上一页
+		}
+		new Vue({
+			el: '#pc',
+			data: function() {
+				return {
+					map: null,
+					// 快速导航
+					quickNavigation: [{
+							img: '../../img/10.png',
+							title: '办事处'
+						},
+						{
+							img: '../../img/10.png',
+							title: '商家'
+						}, {
+							img: '../../img/10.png',
+							title: '景区'
+						}, {
+							img: '../../img/10.png',
+							title: '办事处'
+						}, {
+							img: '../../img/10.png',
+							title: '办事处'
+						}, {
+							img: '../../img/10.png',
+							title: '办事处'
+						}, {
+							img: '../../img/10.png',
+							title: '办事处'
+						}, {
+							img: '../../img/10.png',
+							title: '办事处'
+						}, {
+							img: '../../img/10.png',
+							title: '办事处'
+						}, {
+							img: '../../img/10.png',
+							title: '办事处'
+						}, {
+							img: '../../img/10.png',
+							title: '办事处'
+						}, {
+							img: '../../img/10.png',
+							title: '办事处'
+						}, {
+							img: '../../img/10.png',
+							title: '办事处'
+						}, {
+							img: '../../img/10.png',
+							title: '办事处'
+						}, {
+							img: '../../img/10.png',
+							title: '办事处'
+						}
+					]
+				}
+			},
+			mounted() {
+				this.initMap();
+			},
+			methods: {
+	// 搜索
+				search(){
+					console.log('点击搜索按钮')
+				},
+				initMap() {
+					// 创建地图
+					this.map = new AMap.Map('container', {
+						resizeEnable: true, //是否监控地图容器尺寸变化
+						zoom: 11, //初始化地图层级
+						center: [120.516744, 36.18756] //初始化地图中心点
+					});
+				}
+			}
+		})
+		$(function() {
+			$('#input').on('keyup', function() {
+				var len = document.getElementById('input').value;
+				if (len == '') {
+					$('#q_label').show();
+					// $('#q_i').show();
+				} else {
+					$('#q_label').hide();
+					// $('#q_i').hide();
+				}
+			});
+		})
+		// 网格员弹窗
+		function local(event) {
+			var pop = document.getElementById('pop')
+			//取消冒泡
+			let oevent = event || window.event
+			if (document.all) {
+				oevent.cancelBubble = true
+			} else {
+				oevent.stopPropagation()
+			}
+			if (pop.style.display === 'none' || pop.style.display ===
+				'') {
+				pop.style.display = 'block'
+			} else {
+				pop.style.display = 'none'
+			}
+		}
+		pop.onclick = function(event) {
+			let oevent = event || window.event
+			oevent.stopPropagation()
+		}
+		// 快速导航
+		function popSearch(event) {
+			var popSearch = document.getElementById('popSearch')
+			//取消冒泡
+			let oevent = event || window.event
+			if (document.all) {
+				oevent.cancelBubble = true
+			} else {
+				oevent.stopPropagation()
+			}
+			if (popSearch.style.display === 'none' || popSearch.style.display ===
+				'') {
+				popSearch.style.display = 'block'
+			} else {
+				popSearch.style.display = 'none'
+			}
+		}
+		popSearch.onclick = function(event) {
+			let oevent = event || window.event
+			oevent.stopPropagation()
+		}
+		document.onclick = function() {
+			document.getElementById('pop').style.display = 'none'
+			document.getElementById('popSearch').style.display = 'none'
+		}
+	</script>
+</html>

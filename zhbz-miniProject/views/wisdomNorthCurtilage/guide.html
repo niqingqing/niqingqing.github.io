@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
+		<title>办事指南</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<script src="../../js/phone.js"></script>
+
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- import Vue before Element -->
+		<script src="../../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<style type="text/css">
+			.container-top {
+				background: #f2f2f2;
+			}
+
+			.el-tabs--top {
+				margin-top: 0.12rem;
+			}
+
+			.el-tabs__item.is-active {
+				background: #409EFF;
+				color: #FFFFFF;
+			}
+
+			.el-tabs__item:hover {
+				/* color: #FFFFFF; */
+			}
+
+			.el-tabs--card>.el-tabs__header {
+				width: calc(100% - 0.24rem);
+				height: 0.4rem;
+				position: fixed;
+				z-index: 99;
+				margin: 0;
+				border-bottom: none;
+				background: #FFFFFF;
+				/* border-top-left-radius: 6px;
+				border-top-right-radius: 6px; */
+			}
+
+			.el-tabs--card>.el-tabs__header .el-tabs__nav {
+				width: 100%;
+				display: flex;
+				border: 1px solid #EEEEEE;
+				border-radius: 6px 6px 6px 6px;
+			}
+
+			.el-tabs--card>.el-tabs__header .el-tabs__item:first-child {
+				border-radius: 6px 0 0 6px;
+			}
+
+			.el-tabs--top .el-tabs__item.is-top:last-child {
+				border-radius: 0 6px 6px 0;
+			}
+
+			.el-tabs--card>.el-tabs__header .el-tabs__item {
+				width: 33.33%;
+				text-align: center;
+				transition: none;
+				display: block;
+				border-bottom: none;
+			}
+
+			.el-tabs__content {
+				padding-top: 0.4rem;
+			}
+
+			.el-tabs__content .el-tab-pane {
+				background: #FFFFFF;
+				font-size: 0.16rem;
+			}
+
+			.first {
+				height: 8rem;
+				padding: 0 0.12rem;
+			}
+
+			.item {
+				line-height: 0.34rem;
+				border-bottom: 1px solid #efefef;
+				font-size: 0.14rem;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="container-top">
+			<!--返回-->
+			<div class="back" onclick="back()">
+				<img src="../../img/back.png">
+			</div>
+			<div class="headTitle">办事指南</div>
+			<div class="more"><img src="../../img/more.png"/></div>
+		</header>
+		<div style="width: 100%;height: 0.12rem; background: #FFFFFF;position: fixed;top: 0.48rem;z-index: 99;"></div>
+		<div class="wrap" id="pc">
+			<el-tabs v-model="activeName" type="card" @tab-click="handleClick">
+				<el-tab-pane label="个人" name="first">
+					<div class="first">
+						<div class="item" v-for="(item,index) in personal">{{item}}</div>
+					</div>
+				</el-tab-pane>
+				<el-tab-pane label="法人" name="second">
+					<div class="item" v-for="(item,index) in legalPerson">{{item}}</div>
+				</el-tab-pane>
+				<el-tab-pane label="部门" name="third">
+					<div class="item" v-for="(item,index) in department">{{item}}</div>
+				</el-tab-pane>
+			</el-tabs>
+		</div>
+	</body>
+	<script>
+		// 返回
+		function back() {
+			window.history.go(-1); //返回上一页
+		}
+		new Vue({
+			el: '#pc',
+			data: function() {
+				return {
+					//当前选中tab
+					activeName: 'first',
+					//数组循环
+					personal: [
+						'市委办公厅（市档案局）',
+						'市委宣传部（市新闻出版局',
+						'市委统战部(市侨办)',
+						'市发改委',
+						'市经信局',
+						'市教育局',
+						'市科技局',
+						'市民宗局',
+						'市公安局',
+						'市民政局',
+						'市司法局',
+						'市财政局',
+						'市人力社保局',
+						'市自然资源规划局'
+					],
+					legalPerson: [
+						'法人',
+						'法人',
+						'法人'
+					],
+					department: [
+						'部门',
+						'部门',
+						'部门',
+						'部门'
+					]
+				}
+			},
+			methods: {
+				handleClick(tab, event) {
+					console.log(tab, event);
+				}
+			}
+		})
+	</script>
+</html>

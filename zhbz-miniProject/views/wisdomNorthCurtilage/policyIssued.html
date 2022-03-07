@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
+		<title>政策发布</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<script src="../../js/phone.js"></script>
+
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="../../css/elementuiCss.css" />
+		<!-- <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"> -->
+		<!-- import Vue before Element -->
+		<script src="../../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 引入组件库 -->
+		<script src="../../js/elementuiIndex.js"></script>
+		<!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> -->
+
+		<style type="text/css">
+			.govern_title,
+			.news_title,
+			.com_title {
+				font-size: 0.16rem;
+				font-weight: 700;
+			}
+
+			.govern_item {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-top: 0.12rem;
+			}
+
+			.streetRelease,
+			.openGovernment {
+				width: 50%;
+				/* height: 1rem; */
+				padding: 0.12rem 0;
+			}
+
+			.streetRelease {
+				border: 1px solid #929292;
+			}
+
+			.openGovernment {
+				border: 1px solid #929292;
+				border-left: none;
+			}
+
+			.streetPic,
+			.openPic {
+				width: 0.5rem;
+				height: 0.48rem;
+				margin: 0 auto;
+			}
+
+			.streetPic img,
+			.openPic img {
+				width: 100%;
+				height: 100%;
+			}
+
+			.streetTitle,
+			.openTitle {
+				font-size: 0.14rem;
+				text-align: center;
+				margin-top: 0.06rem;
+			}
+
+			.newsBulletin {
+				margin-top: 0.16rem;
+			}
+
+			.news_item,
+			.com_item {
+				margin-top: 0.12rem;
+			}
+
+			.item {
+				margin-bottom: 0.12rem;
+			}
+
+			.item_text {
+				font-size: 0.14rem;
+				text-indent: 0.18rem;
+			}
+
+			.item_time {
+				font-size: 0.12rem;
+				color: #B2B2B2;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="container-top">
+			<!--返回-->
+			<div class="back" onclick="back()">
+				<img src="../../img/back.png">
+			</div>
+			<div class="headTitle">政策发布</div>
+			<div class="more"><img src="../../img/more.png"/></div>
+		</header>
+		<div class="wrap" id="pc">
+			<!-- 政务信息公开 -->
+			<div class="governmentInformationDisclosure">
+				<div class="govern_title">政务信息公开</div>
+				<div class="govern_item">
+					<div class="streetRelease">
+						<div class="streetPic"><img src="../../img/13.png" /></div>
+						<div class="streetTitle">街道发布</div>
+					</div>
+					<div class="openGovernment">
+						<div class="openPic"><img src="../../img/14.png" /></div>
+						<div class="openTitle">政务公开</div>
+					</div>
+				</div>
+			</div>
+			<!-- 新闻公告 -->
+			<div class="newsBulletin">
+				<div class="news_title">新闻公告</div>
+				<div class="news_item">
+					<div class="item" v-for="(item,index) in newsArray">
+						<div class="item_text">{{item.text}}</div>
+						<div class="item_time">{{item.time}}</div>
+					</div>
+				</div>
+			</div>
+			<!-- 社区动态 -->
+			<div class="communityDynamic">
+				<div class="com_title">社区动态</div>
+				<div class="com_item">
+					<div class="item" v-for="(item,index) in comArray">
+						<div class="item_text">{{item.text}}</div>
+						<div class="item_time">{{item.time}}1</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		// 返回
+		function back() {
+			window.history.go(-1); //返回上一页
+		}
+		new Vue({
+			el: '#pc',
+			data: function() {
+				return {
+					newsArray: [{
+							text: '政策模拟内容政策模拟内容政策模拟内容政策模拟内容政策模拟内容政策模拟内容政策模拟内容政策模拟内测',
+							time: '2022.02.28'
+						},
+						{
+							text: '政策模拟内容政策模拟内容政策模拟内容政策模拟内容政策模拟内容政策模拟内容政策模拟内容政策模拟内测',
+							time: '2022.02.28'
+						}
+					],
+					comArray: [{
+							text: '政策模拟内容政策模拟内容政策模拟内容政策模拟内容政策模拟内容政策模拟内容政策模拟内容政策模拟内测',
+							time: '2022.02.28'
+						},
+						{
+							text: '政策模拟内容政策模拟内容政策模拟内容政策模拟内容政策模拟内容政策模拟内容政策模拟内容政策模拟内测',
+							time: '2022.02.28'
+						}
+					]
+				}
+			},
+			methods: {
+
+			}
+		})
+	</script>
+</html>

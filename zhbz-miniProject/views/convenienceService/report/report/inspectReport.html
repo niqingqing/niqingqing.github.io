@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
+		<title>一键上报</title>
+		<link rel="stylesheet" type="text/css" href="../../../../css/common.css" />
+		<script src="../../../../js/phone.js"></script>
+
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- import Vue before Element -->
+		<script src="../../../../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<style type="text/css">
+			.inspectList {
+				font-size: 0.12rem;
+				text-align: right;
+				color: #00cde0;
+			}
+
+			.address {
+				display: flex;
+			}
+
+			.addressPic {
+				display: block;
+				width: 0.2rem;
+				height: 0.2rem;
+				margin-right: 0.06rem;
+			}
+
+			.addressText {
+				font-size: 0.14rem;
+			}
+
+			.form {
+				margin-top: 0.12rem;
+			}
+
+			.el-input.is-disabled .el-input__inner {
+				background-color: #FFFFFF;
+				border-color: #FFFFFF;
+				color: #606266;
+			}
+			.taskType .el-select,
+			.eventType .el-select{
+				width: 100%;
+			}
+			.area .el-form-item__content {
+				display: flex;
+			}
+
+			.area .el-select {
+				width: 49%;
+			}
+
+			.area .el-select:first-child {
+				margin-right: 2%;
+			}
+
+			.area .el-input {
+				/* width: 50%; */
+			}
+
+			.describeContent .el-form-item__content {
+				margin-left: 0 !important;
+			}
+
+			.photograph {
+				width: 0.4rem;
+				height: 0.4rem;
+			}
+
+			.submit .el-form-item__content {
+				margin-left: 0 !important;
+				text-align: center;
+			}
+
+			.submit .el-form-item__content .el-button {
+				padding: 12px 42px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="container-top">
+			<!--返回-->
+			<div class="back" onclick="back()">
+				<img src="../../../../img/back.png">
+			</div>
+			<div class="headTitle">一键上报</div>
+			<div class="more"><img src="../../../../img/more.png" /></div>
+		</header>
+		<div class="wrap" id="app">
+			<div class="inspectList" @click="inspectList">巡查列表</div>
+			<div class="address">
+				<img src="../../../../img/address.png" class="addressPic" />
+				<div class="addressText">xxxx街道xxx村</div>
+			</div>
+			<div class="form">
+				<el-form ref="form" :model="form" label-width="80px">
+					<el-form-item label="任务类型:" class="taskType">
+						<el-select v-model="form.taskTypeValue" placeholder="请选择任务类型" @change="taskType">
+							<el-option v-for="(item,index) in form.taskType" :label="item.label" :value="item.value">
+							</el-option>
+						</el-select>
+					</el-form-item>
+					<el-form-item label="事件类型:" class="eventType">
+						<el-select v-model="form.eventTypeValue" placeholder="请选择事件类型" @change="eventType">
+							<el-option v-for="(item,index) in form.eventType" :label="item.label" :value="item.value">
+							</el-option>
+						</el-select>
+					</el-form-item>
+					<el-form-item label="巡查人:">
+						<el-input v-model="form.name" disabled></el-input>
+					</el-form-item>
+					<el-form-item label="所在地区:" class="area">
+						<el-select v-model="form.areaValue" placeholder="请选择地区" @change="area">
+							<el-option v-for="(item,index) in form.area" :label="item.label" :value="item.value">
+							</el-option>
+						</el-select>
+						<el-select v-model="form.communityValue" placeholder="请选择社区" @change="community">
+							<el-option v-for="(item,index) in form.community" :label="item.label" :value="item.value">
+							</el-option>
+						</el-select>
+					</el-form-item>
+					<el-form-item label="详细地址:">
+						<el-input v-model="form.detailedAddress" placeholder="请输入详细地址"></el-input>
+					</el-form-item>
+					<el-form-item label="事件标题:">
+						<el-input v-model="form.eventTitle" placeholder="请输入事件标题"></el-input>
+					</el-form-item>
+					<el-form-item label="" class="describeContent">
+						<el-input type="textarea" v-model="form.describeContent" placeholder="请输入描述内容" rows="4">
+						</el-input>
+					</el-form-item>
+					<el-form-item label="点击拍照:">
+						<img src="../../../../img/photograph.png" class="photograph" @click="photograph" />
+					</el-form-item>
+					<el-form-item label="" class="submit">
+						<el-button type="primary">提交</el-button>
+					</el-form-item>
+				</el-form>
+			</div>
+		</div>
+	</body>
+	<script>
+		// 返回
+		function back() {
+			window.history.go(-1); //返回上一页
+		}
+		new Vue({
+			el: '#app',
+			data: function() {
+				return {
+					form: {
+						// 任务类型
+						taskType: [{
+							label: '日常巡查',
+							value: 1
+						}, {
+							label: '应急巡查',
+							value: 2
+						}, {
+							label: '专项巡查',
+							value: 3
+						}],
+						taskTypeValue: '',
+						// 事件类型
+						eventType: [{
+							label: '环卫事件',
+							value: 1
+						}, {
+							label: '环卫事件',
+							value: 2
+						}, {
+							label: '环卫事件',
+							value: 3
+						}],
+						eventTypeValue: '',
+						// 巡查人
+						name: '张三',
+						// 地区
+						area: [{
+							label: '沟崖',
+							value: 1
+						}, {
+							label: '北宅科',
+							value: 2
+						}, {
+							label: '卧龙',
+							value: 3
+						}],
+						areaValue: '',
+						// 社区
+						community: [{
+							label: '沟崖社区',
+							value: 1
+						}, {
+							label: '东陈社区',
+							value: 2
+						}, {
+							label: '西陈社区',
+							value: 3
+						}],
+						communityValue: '',
+						// 详细地址
+						detailedAddress: '',
+						// 事件标题
+						eventTitle: '',
+						// 描述内容
+						describeContent: ''
+					}
+				}
+			},
+			methods: {
+				// 任务类型
+				taskType() {
+					console.log(this.form.taskTypeValue, '任务类型')
+				},
+				// 事件类型
+				eventType() {
+					console.log(this.form.eventTypeValue, '事件类型')
+				},
+				// 地区
+				area() {
+					console.log(this.form.areaValue, '地区')
+				},
+				// 社区
+				community() {
+					console.log(this.form.communityValue, '社区')
+				},
+				// 拍照
+				photograph() {
+					alert('拍照')
+				},
+				// 巡查列表
+				inspectList(){
+					window.location.href = '../../searchQuery/searchQuery.html'; //h5跳转页面
+				}
+			}
+		})
+	</script>
+</html>

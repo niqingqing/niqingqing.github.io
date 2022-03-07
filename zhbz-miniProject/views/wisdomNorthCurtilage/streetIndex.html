@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
+		<title>街道首页</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<script src="../../js/phone.js"></script>
+		<style type="text/css">
+			.title {
+				font-size: 0.3rem;
+				font-weight: 700;
+				color: #333333;
+			}
+
+			.module {
+				display: grid;
+				grid-template-columns: 33.33% 33.33% 33.33%;
+				grid-row-gap: 0.24rem;
+				text-align: center;
+				margin-top: 0.36rem;
+			}
+
+			.item {}
+
+			.item_pic {
+				display: grid;
+				justify-content: center;
+			}
+
+			.item_title {
+				font-size: 0.18rem;
+				font-weight: 700;
+				margin-top: 0.12rem;
+				color: #333333;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="container-top">
+			<!--返回-->
+			<div class="back" onclick="back()">
+				<img src="../../img/back.png">
+			</div>
+		</header>
+		<div class="wrap">
+			<div class="title">智慧北宅</div>
+			<div class="module">
+				<a href="streetOverview.html" class="item">
+					<!-- <div class="item"> -->
+					<div class="item_pic"><img src="../../img/1.png"></div>
+					<div class="item_title">街道概况</div>
+					<!-- </div> -->
+				</a>
+				<a href="../convenienceService/convenienceMap.html" class="item">
+					<div class="item_pic"><img src="../../img/2.png"></div>
+					<div class="item_title">街道咨询</div>
+				</a>
+				<a href="policyIssued.html" class="item">
+					<div class="item_pic"><img src="../../img/3.png"></div>
+					<div class="item_title">政策发布</div>
+				</a>
+				<a href="guide.html" class="item">
+					<div class="item_pic"><img src="../../img/4.png"></div>
+					<div class="item_title">办事指南</div>
+				</a>
+				<a href="../convenienceService/scenicSpotTour.html" class="item">
+					<div class="item_pic"><img src="../../img/5.png"></div>
+					<div class="item_title">便民地图</div>
+				</a>
+				<a href="streetOverview.html" class="item">
+					<div class="item_pic"><img src="../../img/6.png"></div>
+					<div class="item_title">普法知识</div>
+				</a>
+				<a href="streetOverview.html" class="item">
+					<div class="item_pic"><img src="../../img/7.png"></div>
+					<div class="item_title">便民购物</div>
+				</a>
+				<a href="../convenienceService/report/report/inspectReport.html" class="item">
+					<div class="item_pic"><img src="../../img/8.png"></div>
+					<div class="item_title">巡查上报</div>
+				</a>
+				<a href="../convenienceService/report/report/residentsReported.html" class="item">
+					<div class="item_pic"><img src="../../img/9.png"></div>
+					<div class="item_title">市民上报</div>
+				</a>
+			</div>
+		</div>
+	</body>
+	<script type="text/jscript">
+		// 返回
+		function back() {
+			window.history.go(-1); //返回上一页
+		}
+	</script>
+</html>

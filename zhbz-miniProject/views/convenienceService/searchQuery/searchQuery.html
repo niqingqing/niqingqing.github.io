@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
+		<title>上报记录</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/common.css" />
+		<script src="../../../js/phone.js"></script>
+
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- import Vue before Element -->
+		<script src="../../../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<!-- 引入vant -->
+		<link rel="stylesheet" href="../../../css/vantCss.css" />
+		<script src="../../../js/vueMin.js"></script>
+		<script src="../../../js/vantMin.js"></script>
+		<script src="../../../js/axios.js"></script>
+		<style type="text/css">
+			.search {
+				width: calc(100% - 0.24rem);
+				position: fixed;
+				z-index: 99;
+			}
+
+			.van-search {
+				padding: 0;
+			}
+
+			.search .el-form-item__content {
+				margin-left: 0 !important;
+			}
+
+			.search .el-form-item__content .el-autocomplete {
+				width: 100%;
+			}
+
+			.prompt {
+				height: 0.48rem;
+				line-height: 0.48rem;
+				font-size: 0.14rem;
+				text-align: center;
+				background: #FFFFFF;
+			}
+
+			.list {
+				font-size: 0.14rem;
+				margin-top: 1rem;
+			}
+
+			.item {
+				margin-bottom: 0.14rem;
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.pic {
+				width: 30%;
+				height: 30%;
+			}
+
+			.pic img {
+				width: 100%;
+				height: 100%;
+			}
+
+			.text {
+				width: 67%;
+				display: grid;
+				grid-template-columns: 100%;
+				align-items: center;
+			}
+
+			.describe,
+			.place,
+			.time {
+				display: flex;
+			}
+
+			.dexTitle,
+			.placeTitle,
+			.timeTitle {
+				width: 20%;
+			}
+
+			.desInfor,
+			.placeInfor,
+			.timeInfor {
+				width: 80%;
+				overflow: hidden;
+				display: -webkit-box;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 2;
+				/*要显示的行数*/
+				-webkit-box-orient: vertical;
+			}
+
+			.placeInfor {
+				-webkit-line-clamp: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="container-top">
+			<!--返回-->
+			<div class="back" onclick="back()">
+				<img src="../../../img/back.png">
+			</div>
+			<div class="headTitle">上报记录</div>
+			<div class="more"><img src="../../../img/more.png" /></div>
+		</header>
+		<div class="wrap" id="pc">
+
+			<div class="search">
+				<div style="width:100%;height: 0.12rem;background: #FFFFFF;"></div>
+				<div>
+					<van-search v-model="searchValue" placeholder="请输入关键词" />
+				</div>
+				<div class="prompt">到目前为止，您共上报了{{this.list.length}}条事件</div>
+
+			</div>
+
+			<div class="list">
+				<van-pull-refresh v-model="loading" @refresh="onRefresh">
+					<!-- <p>刷新次数: {{ count }}</p> -->
+					<van-list v-model:loading="loading" :finished="finished" finished-text="没有更多了" offset="700"
+						@load="on()">
+						<div class="item" v-for="(item,index) in list" @click="details(item.idx)">
+							<div class="pic"><img src="../../../img/u7943.png" /></div>
+							<div class="text">
+								<div class="describe">
+									<div class="dexTitle">描述：</div>
+									<div class="desInfor">{{item.describe}}</div>
+								</div>
+								<div class="place">
+									<div class="placeTitle">地点：</div>
+									<div class="placeInfor">{{item.place}}</div>
+								</div>
+								<div class="time">
+									<div class="timeTitle">时间：</div>
+									<div class="timeInfor">{{item.time}}</div>
+								</div>
+							</div>
+						</div>
+					</van-list>
+				</van-pull-refresh>
+			</div>
+		</div>
+	</body>
+	<script>
+		// 返回
+		function back() {
+			window.history.go(-1); //返回上一页
+		}
+		new Vue({
+			el: '#pc',
+			data: function() {
+				return {
+					// 搜索
+					searchValue: '',
+					// 列表
+					list: [{
+						idx: 1,
+						describe: '随手拍描述模拟内容，随手拍描述模拟内容,随手拍描述模拟内容随手拍描述模拟内容,随手拍描述模拟内容',
+						place: '山东省青岛市市北区徐州路172号',
+						time: '2021.12.1'
+					}, {
+						idx: 2,
+						describe: '随手拍描述模拟内容，随手拍描述模拟内容,随手拍描述模拟内容随手拍描述模拟内容,随手拍描述模拟内容',
+						place: '山东省青岛市市北区徐州路172号',
+						time: '2021.12.1'
+					}, {
+						idx: 3,
+						describe: '随手拍描述模拟内容，随手拍描述模拟内容,随手拍描述模拟内容随手拍描述模拟内容,随手拍描述模拟内容',
+						place: '山东省青岛市市北区徐州路172号',
+						time: '2021.12.1'
+					}, {
+						idx: 4,
+						describe: '随手拍描述模拟内容，随手拍描述模拟内容,随手拍描述模拟内容随手拍描述模拟内容,随手拍描述模拟内容',
+						place: '山东省青岛市市北区徐州路172号',
+						time: '2021.12.1'
+					}, {
+						idx: 5,
+						describe: '随手拍描述模拟内容，随手拍描述模拟内容,随手拍描述模拟内容随手拍描述模拟内容,随手拍描述模拟内容',
+						place: '山东省青岛市市北区徐州路172号',
+						time: '2021.12.1'
+					}, {
+						idx: 6,
+						describe: '随手拍描述模拟内容，随手拍描述模拟内容,随手拍描述模拟内容随手拍描述模拟内容,随手拍描述模拟内容',
+						place: '山东省青岛市市北区徐州路172号',
+						time: '2021.12.1'
+					}, {
+						idx: 7,
+						describe: '随手拍描述模拟内容，随手拍描述模拟内容,随手拍描述模拟内容随手拍描述模拟内容,随手拍描述模拟内容',
+						place: '山东省青岛市市北区徐州路172号',
+						time: '2021.12.1'
+					}, {
+						idx: 8,
+						describe: '随手拍描述模拟内容，随手拍描述模拟内容,随手拍描述模拟内容随手拍描述模拟内容,随手拍描述模拟内容',
+						place: '山东省青岛市市北区徐州路172号',
+						time: '2021.12.1'
+					}],
+					// 列表相关
+					// list: [],
+					onLoad: false,
+					loading: false,
+					finished: false,
+					count: 0,
+					loading: false,
+				}
+			},
+			methods: {
+				//点击列表进入详情
+				details(idx) {
+					console.log("这是某条数据的id：", idx);
+					window.location.href = 'eventDetails.html?id=' + idx; //h5跳转页面
+				},
+				// 列表相关
+				onRefresh() {
+					setTimeout(() => {
+						vant.Toast('刷新成功');
+						this.loading = false;
+						this.count++;
+					}, 1000);
+				},
+				on() {
+					var i = {
+						idx: 9,
+						describe: '加油1',
+						place: '山东省青岛市市北区徐州路172号',
+						time: '2021.12.1'
+					};
+					// setTimeout(() => {
+					// for (let i = 0; i < 10; i++) {
+					// 	this.list.push(i);
+					// }
+					this.list.push(i);
+
+					// 加载状态结束
+					this.loading = false;
+
+					// 数据全部加载完成
+					if (this.list.length <= 9) {
+						this.finished = true;
+					}
+					// }, 1000);
+				}
+			},
+		})
+	</script>
+</html>

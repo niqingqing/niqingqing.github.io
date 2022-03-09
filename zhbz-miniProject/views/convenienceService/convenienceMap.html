@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">   
+		<meta charset="utf-8">
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 		<meta name="viewport"
 			content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
@@ -268,7 +268,7 @@
 				</div>
 			</div>
 			<!-- 快速导航 -->
-			<div class="popSearch" id="popSearch">
+			<div class="popSearch" id="popSea">
 				<div class="searchTitle">快速导航</div>
 				<div class="search_list">
 					<div class="search_list_item" v-for="(item,index) in quickNavigation">
@@ -347,8 +347,8 @@
 				this.initMap();
 			},
 			methods: {
-	// 搜索
-				search(){
+				// 搜索
+				search() {
 					console.log('点击搜索按钮')
 				},
 				initMap() {
@@ -404,20 +404,20 @@
 			} else {
 				oevent.stopPropagation()
 			}
-			if (popSearch.style.display === 'none' || popSearch.style.display ===
+			if (popSea.style.display === 'none' || popSea.style.display ===
 				'') {
-				popSearch.style.display = 'block'
+				popSea.style.display = 'block'
 			} else {
-				popSearch.style.display = 'none'
+				popSea.style.display = 'none'
 			}
 		}
-		popSearch.onclick = function(event) {
+		popSea.onclick = function(event) {
 			let oevent = event || window.event
 			oevent.stopPropagation()
 		}
 		document.onclick = function() {
 			document.getElementById('pop').style.display = 'none'
-			document.getElementById('popSearch').style.display = 'none'
+			document.getElementById('popSea').style.display = 'none'
 		}
 	</script>
 </html>

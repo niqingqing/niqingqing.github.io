@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- import Vue before Element -->
+		<script src="./js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/phone.js"></script>
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<style>
+			/*动画*/
+			/* 	.fade-enter-active,
+			.fade-leave-active {
+				transition: all .2s linear;
+				transform: translate3D(0, 0, 0);
+			}
+
+			.fade-enter,
+			.fade-leave-active {
+				transform: translate3D(100%, 0, 0);
+			} */
+
+
+			/* bigimg */
+
+			.img-view {
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+
+			/*遮罩层样式*/
+			.img-view .img-layer {
+				position: fixed;
+				z-index: 999;
+				top: 0;
+				left: 0;
+				background: rgba(0, 0, 0, 0.7);
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+
+			/*不限制图片大小，实现居中*/
+			.img-view .img img {
+				max-width: 100%;
+				display: block;
+				position: absolute;
+				left: 0;
+				right: 0;
+				margin: auto;
+				z-index: 1000;
+			}
+
+			.wmassageMask {
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				background-color: rgba(0, 0, 0, .3);
+				z-index: 101;
+			}
+
+			.messageMaskContent {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				background-color: #fff;
+			}
+
+			p {
+				text-align: center;
+				font-size: .768rem;
+				line-height: 1;
+				margin: 1.365333rem auto;
+				font-weight: 500;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="pc">
+			<button @click="big" id="pop1">点击放大</button>
+			<!-- 过渡动画 -->
+			<transition name="fade" v-if="flag" id="pop">
+				<div class="img-view">
+					<!-- 遮罩层 -->
+					<div class="img-layer"></div>
+
+					<div class="img">
+						<div @click="cha" style="position: absolute;z-index: 999;">X</div>
+						<img src="./img/img2.png">
+					</div>
+				</div>
+			</transition>
+
+
+			<button @click="writeMessageShow=true">打开遮罩</button>
+			<div class="wmassageMask" v-show="writeMessageShow" @click="writeMessageFun($event)">
+				<div class="messageMaskContent" ref="msk">
+					<div @click="cha" style="position: absolute;z-index: 999;">X</div>
+					<img src="./img/img2.png">
+				</div>
+			</div>
+
+
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el: '#pc',
+			data: function() {
+				return {
+					flag: false,
+					writeMessageShow: false
+				}
+			},
+			created() {},
+			mounted() {
+
+			},
+			methods: {
+				big() {
+					this.flag = true
+				},
+				cha() {
+					this.flag = false
+					this.writeMessageShow = false
+				},
+				writeMessageFun(ev) {
+					if (!this.$refs.msk.contains(ev.target)) {
+						console.log(this.$refs.msk.contains,'测试')
+						this.writeMessageShow = false;
+					}
+				}
+			}
+		})
+	</script>
+</html>

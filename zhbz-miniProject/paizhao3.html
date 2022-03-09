@@ -10,7 +10,7 @@
 		<script src="js/phone.js"></script>
 		<!-- 引入组件库 -->
 		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
-		<!-- <script src="js/jquery-3.1.1.min.js"></script> -->
+		<script src="js/jquery-3.1.1.min.js"></script>
 	</head>
 	<body>
 		<div id="pc">
@@ -45,9 +45,11 @@
 				readLocalFile: function() {
 					var localFile = document.getElementById("uploadFile").files[0];
 					var reader = new FileReader();
+					// reader.readAsDataURL(file.raw);
 					var content;
 					var current = this;
 					reader.onload = function(event) {
+						console.log(event)
 						content = event.target.result;
 						current.imgs.push(content); //获取图片base64代码
 					}

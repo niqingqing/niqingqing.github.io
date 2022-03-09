@@ -17,7 +17,7 @@
 				height: 1.5rem;
 			}
 
-			.wmassageMask {
+			.mask {
 				position: fixed;
 				top: 0;
 				bottom: 0;
@@ -27,12 +27,18 @@
 				z-index: 101;
 			}
 
-			.messageMaskContent {
+			.maskContent {
+				width: 60%;
+				height: 60%;
 				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 100%;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
 				background-color: #fff;
+			}
+			.bigImg{
+				width: 100%;
+				height: 100%;
 			}
 		</style>
 	</head>
@@ -51,25 +57,22 @@
 						<div class="upload_warp_img_div_top">
 							<img src="img/cancel.png" class="upload_warp_img_div_del" @click="fileDel(index)">
 						</div>
-						<!-- <el-image style="width: 100px; height: 100px" :src="item.file.src" :preview-src-list="item.file">
-						</el-image> -->
-						<img :src="item.file.src" style="display: inline-block;" class="pic" @click="writeMessageShow=true">
+						<img :src="item.file.src" style="display: inline-block;" class="pic" @click="maskShow=true">
 						<!-- 弹窗 -->
-						<div class="wmassageMask" v-show="writeMessageShow" @click="writeMessageFun($event)">
-							<div class="messageMaskContent" id="aa">
-								<div @click="cha" style="position: absolute;z-index: 999;">X</div>
-								<img :src="item.file.src">
+						<div class="mask" v-show="maskShow" @click="writeMessageFun($event)">
+							<div class="maskContent" id="maskContent">
+								<div @click="close" style="position: absolute;z-index: 999;">X</div>
+								<img :src="item.file.src" class="bigImg">
 							</div>
 						</div>
 					</div>
 					<div class="upload_warp_left" id="upload_warp_left" @click="fileClick()"
 						v-if="this.imgList.length < 6">
-						<!--<img src="../assets/upload.png">-->
 						<img src="img/3.png" class="imgs" />
 					</div>
 				</div>
 			</div>
-		
+
 			<div class="upload_warp_text">
 				<span style="font-size: 0.24rem;">选中{{imgList.length}}张文件，共{{bytesToSize(this.size)}}</span>
 			</div>
@@ -86,21 +89,19 @@
 					datas: new FormData(),
 					files: 0,
 					size: 0,
-					srcList: [
-						'https://fuss10.elemecdn.com/8/27/f01c15bb73e1ef3793e64e6b7bbccjpeg.jpeg',
-						'https://fuss10.elemecdn.com/1/8e/aeffeb4de74e2fde4bd74fc7b4486jpeg.jpeg'
-					],
-					writeMessageShow: false
+					maskShow: false
 				}
 			},
 			methods: {
-				cha() {
-					this.writeMessageShow = false
+				// 关闭遮罩层
+				close() {
+					this.maskShow = false
 				},
+				// 点击其他地方，关闭遮罩层
 				writeMessageFun(ev) {
-					var b = document.getElementById('aa')
-					if (!b.contains(ev.target)) {
-						this.writeMessageShow = false;
+					var content = document.getElementById('maskContent')
+					if (!content.contains(ev.target)) {
+						this.maskShow = false;
 					}
 				},
 				//调用相册&相机

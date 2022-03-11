@@ -13,20 +13,38 @@
 		<script src="js/jquery-3.1.1.min.js"></script>
 		<style>
 			.pic {
-				width: 1.5rem;
-				height: 1.5rem;
+				width: 100%;
+				height: 100%;
 				display: block;
+			}
+
+			.upload_warp_img {
+				display: grid;
+				grid-template-columns: 33% 33% 33%;
+				grid-template-rows: 2rem 2rem;
+				grid-column-gap: 0.5%;
+				grid-row-gap: 2%;
+			}
+
+			.upload_warp_img_div {
+				position: relative;
+				width: fit-content;
 			}
 
 			.upload_warp_img_div_top {
 				width: fit-content;
 				height: fit-content;
+				position: absolute;
+				top: 0.1rem;
+				right: 0.1rem;
 			}
-			.upload_warp_img_div_del{
+
+			.upload_warp_img_div_del {
 				width: 100%;
 				height: 100%;
 				display: block;
 			}
+
 			.mask {
 				position: fixed;
 				top: 0;
@@ -39,17 +57,16 @@
 
 			.maskContent {
 				width: 60%;
-				height: 60%;
 				position: absolute;
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
-				background-color: #fff;
 			}
 
 			.bigImg {
 				width: 100%;
 				height: 100%;
+				display: block;
 			}
 		</style>
 	</head>
@@ -167,6 +184,7 @@
 					console.log(this.files.length, "图片文件有几张");
 					for (let i = 0; i < this.files.length; i++) {
 						this.datas.append("file", this.files[i]);
+						console.log(this.datas.append,'信息')
 					}
 					this.show1 = false;
 					console.log(this.files, "图片文件");
@@ -239,26 +257,26 @@
 						i = Math.floor(Math.log(bytes) / Math.log(k));
 					return (bytes / Math.pow(k, i)).toPrecision(3) + ' ' + sizes[i];
 				},
-				dragenter(el) {
-					el.stopPropagation();
-					el.preventDefault();
-				},
-				dragover(el) {
-					el.stopPropagation();
-					el.preventDefault();
-				},
-				drop(el) {
-					el.stopPropagation();
-					el.preventDefault();
-					this.fileList(el.dataTransfer);
-				},
-				shows(et, tx) {
-					this.strut = et;
-					this.txt = tx;
-				},
-				handleClick() {
-					this.$store.commit('add')
-				},
+				// dragenter(el) {
+				// 	el.stopPropagation();
+				// 	el.preventDefault();
+				// },
+				// dragover(el) {
+				// 	el.stopPropagation();
+				// 	el.preventDefault();
+				// },
+				// drop(el) {
+				// 	el.stopPropagation();
+				// 	el.preventDefault();
+				// 	this.fileList(el.dataTransfer);
+				// },
+				// shows(et, tx) {
+				// 	this.strut = et;
+				// 	this.txt = tx;
+				// },
+				// handleClick() {
+				// 	this.$store.commit('add')
+				// },
 			}
 		})
 	</script>
